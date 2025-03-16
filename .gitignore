@@ -1,0 +1,6 @@
+build
+.venv
+__pycache__
+
+# See schedule.py
+token.key
