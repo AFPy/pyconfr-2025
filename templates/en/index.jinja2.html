@@ -1,0 +1,140 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article class="coverboard">
+    <h2>Presenting PyConFR 2025!</h2>
+
+    <aside>
+      <span>16</span><sup>th</sup> edition
+    </aside>
+
+    <p class="pycon-date">October 30<sup>th</sup> – November 2<sup>nd</sup> 2025 at Lyon</p>
+
+    <p>
+      Organized by <a href="https://www.afpy.org">AFPy</a>, this four-day conference is free,
+      entirely coordinated by volunteers and dedicated to bringing
+      together people interested by the <a href="https://www.python.org/">Python</a> programming language.
+    </p>
+
+    {#
+    <ul class="buttons">
+      <li>
+        <a class="register" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Register</a>
+      </li>
+      <li>
+        <a class="schedule" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
+      </li>
+    </ul>
+    #}
+  </article>
+
+  <article>
+    <h2>Schedule</h2>
+
+    {#
+    <ul class="buttons">
+      <li>
+        <a class="details" href="{{ url_for('page', name='schedule', lang=lang) }}">More details</a>!
+      </li>
+    </ul>
+    #}
+
+    <div class="event-description">
+      <section>
+        <aside class="subtitle">October 30<sup>th</sup> &amp; 31<sup>st</sup></aside>
+        <h3>Participative Coding: sprints!</h3>
+        <p>
+          Developers of various open source projects gather in little groups to
+          code together. Everyone is welcome to contribute, and we seek to guide
+          beginners.
+        </p>
+        <p class="important">
+          Take part in the development of your favorite project!
+        </p>
+        <p>
+          We provide the space and environment (tables, chairs,
+          internet connection… and coffee!).
+        </p>
+      </section>
+
+      <section>
+        <aside class="subtitle">November 1<sup>st</sup> &amp; 2<sup>nd</sup></aside>
+        <h3>Conferences and Workshops</h3>
+        <p>
+          During these two days, you will have the opportunity to attend
+          presentations on various subjects about the Python programming
+          language:
+        </p>
+        <ul>
+          <li>use cases</li>
+          <li>good practice</li>
+          <li>feedback</li>
+          <li>shared ideas</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <article class="place">
+    <h2>Venue</h2>
+
+    <section>
+      <img src="{{ url_for('static', filename='images/partners/Campus René Cassin.png') }}"/>
+      <address><strong>Campus René Cassin</strong>
+        47 rue du Sergent Michel Berthet​
+        69009 Lyon
+      </address>
+      <ul class="buttons">
+        <li>
+          <a href="{{ url_for('page', name='venue', lang=lang) }}">
+            More Details
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      {{ map() }}
+    </section>
+  </article>
+
+  <article class="afpy">
+    <h2>AFPy, Association Francophone Python</h2>
+
+    <ul class="buttons">
+      <li>
+        <a href="https://www.afpy.org">Our website</a>
+      </li>
+    </ul>
+
+    <section>
+      <h3>
+        AFPy promotes the Python language, both to the informed public and to beginners.
+      </h3>
+      <p>
+        We promote the Python programming language to the widest possible
+        audience.
+      </p>
+      <p>
+        We diffuse our knowledge and are open to external contributions.
+      </p>
+      <p>
+        Solidarity and democracy increase the potential of each one of us.
+      </p>
+    </section>
+  </article>
+
+  <article class="become-sponsor">
+    <aside class="subtitle">Support us!</aside>
+    <h2>Our Sponsors</h2>
+
+    {{ sponsors(lang, only_logo=True) }}
+
+    <section class="contact-sponsor">
+      <p>
+        The team is available to answer your questions about the event
+        at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
+      </p>
+    </section>
+  </article>
+{% endblock content %}

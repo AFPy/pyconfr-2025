@@ -1,0 +1,17 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Partenaires</h2>
+
+    {{ sponsors(lang) }}
+  </article>
+
+  <article>
+    <h2>Nous soutenir</h2>
+
+    {{ brochures(lang) }}
+
+    {{ sponsoring(lang) }}
+  </article>
+{% endblock content %}

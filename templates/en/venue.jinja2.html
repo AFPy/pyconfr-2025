@@ -1,0 +1,140 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Venue</h2>
+    <section>
+      <h3>Address</h3>
+      <p>
+        PyConFR 2025 is held at <a href="https://www.campus-renecassin.com/">Campus René Cassin</a> in Lyon.
+      </p>
+      <address><strong>Campus René Cassin</strong>
+        47 rue du Sergent Michel Berthet​
+        69009 Lyon
+      </address>
+      <p>
+        GPS coordinates: <a href="https://framacarte.org/en/map/pyconfr-2025_205226">45.76845 4.80609</a>
+      </p>
+      {{ map('Fullscreen') }}
+    </section>
+
+    <section>
+      <h3>Visa</h3>
+
+      <h4>Check if You Need a Visa</h4>
+      <p>
+        If you plan to attend PyConFR 2025 in Lyon, please check
+        if you need a visa to enter France and apply as early as
+        possible.
+      </p>
+      <p>
+        France is part of the Schengen area. If you already have a
+        valid Schengen visa, you do not need to apply for an
+        additional one. <strong>If in doubt, please contact your consulate or embassy</strong>.
+      </p>
+      <p>
+        You can also visit the <a href="https://france-visas.gouv.fr/en/web/france-visas/visa-wizard">France Visas website</a> to
+        check if you need a visa.
+      </p>
+
+      <h4>Invitation Letter</h4>
+      <p>
+        If you need a visa, we can provide an invitation letter for your application.
+      </p>
+      <p>
+        Invitation letter requests should be sent via email to <a href="mailto:secretaire@afpy.org">secretaire@afpy.org</a>. Please include the following information in your request:
+      </p>
+      <ul>
+        <li>Title (Mr./Ms.),</li>
+        <li>Full name,</li>
+        <li>Date of birth,</li>
+        <li>Nationality,</li>
+        <li>Passport number,</li>
+        <li>Title of your presentation at the event (if applicable),</li>
+        <li>Amount of the grant provided by AFPy (if applicable),</li>
+        <li>Name of the sponsoring company you represent (if applicable).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Getting to the Campus</h3>
+
+      <section>
+        <h4>By Car</h4>
+        <p>
+          The campus is in the Vaise / Gorge de Loup neighborhood, next to exit
+          number 38 of the A6/M6 highway (North entrance of the Fourvière tunnel).
+        </p>
+        <p>
+          You're coming by car and you have room? Consider carsharing :).
+        </p>
+      </section>
+
+      <section>
+        <h4>By Public Transport</h4>
+        <p>
+          The campus can be reached by <a href="https://www.tcl.fr/">public transport</a>:
+        </p>
+        <ul>
+          <li>
+            By subway: line D, Gorge de Loup stop.
+          </li>
+          <li>
+            By bus: Gorge de Loup stop.
+          </li>
+        </ul>
+        <p>
+          It is possible to pay your travel directly with a credit card, in all
+          buses, tramways and subways.
+        </p>
+      </section>
+
+      <section>
+        <h4>By Train</h4>
+        <p>
+          From the Part-Dieu train station, you can take the B subway to the
+          Saxe-Gambetta stop, and then the D subway to the Gorge de Loup stop
+          (about 20 minutes).
+        </p>
+        <p>
+          From the Perrache train station, you can take the A subway to the
+          Bellecour stop, and then the D subway to the Gorge de Loup stop
+          (about 15 minutes).
+        </p>
+      </section>
+
+      <section>
+        <h4>By Plane</h4>
+        <p>
+          From the Saint-Exupéry airport, you can take the Rhône Express
+          tramway to the Carré de Soie stop, then the A subway to the Bellecour
+          stop, and then the D subway to the Gorge de Loup stop.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h3>Accommodation Advice</h3>
+      <p>
+        The ideal location for being both downtown and close to the conference is
+        Bellecour, but it's a very touristy area and therefore potentially expensive.
+      </p>
+      <p>
+        To make it easier for you to come to the conference and get to the city
+        center, try to be close to a metro station A (between Perrache and Charpennes),
+        B (between Jean Macé and Charpennes) or D (between Saxe-Gambetta and
+        Gorge de Loup).
+      </p>
+      <p>
+        Here are a few reasonably priced hotels in good locations:
+      </p>
+      <ul>
+        <li><a href="https://www.myresidhome.com/lyon/sejours-affaires-park-lane/apparthotel-residence-hoteliere.html">Lyon Park Lane</a> (about 60 €),</li>
+        <li><a href="https://www.yasihostel.com/">Yasi Hostel</a> (about 80 €),</li>
+        <li><a href="https://lyon-centre.campanile.com/">Campanile Lyon Centre – Berges du Rhône</a> (about 80 €),</li>
+        <li><a href="https://all.accor.com/hotel/7413/index.en.shtml">Ibis budget Lyon Part-Dieu</a> (about 95 €),</li>
+        <li><a href="https://www.discoverasr.com/en/citadines/france/citadines-presquile-lyon">Citadines Presqu’île</a> (about 100 €).</li>
+      </ul>
+    </section>
+  </article>
+{% endblock content %}

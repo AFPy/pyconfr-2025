@@ -1,0 +1,24 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Orateurices</h2>
+    {% for key, speaker in schedule.speakers.items() | sort(attribute='1.name') %}
+      <section>
+        <h3 id="speaker-{{ key }}">
+          <a href="#speaker-{{ key }}">
+            {% if speaker.avatar %}
+              <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
+            {% endif %}
+            {{ speaker.name }}
+          </a>
+        </h3>
+        {% if speaker.biography %}
+          {{ speaker.biography | markdown | safe }}
+        {% else %}
+          <p>Pas de biographie.</p>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </article>
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>News</h2>
+
+    <section>
+      <h3>PyConFR 2025</h3>
+
+      <p>
+        The 2025 edition of the francophone community's conference on Python will
+        be held in Lyon from October 30<sup>th</sup> to November
+        2<sup>nd</sup> 2025.
+      </p>
+
+      <p>
+        The first two days are reserved for participative coding sessions. Developers
+        from different open source projects come to code together. Everyone is welcome
+        to contribute, and we seek to guide beginners. We provide the space and
+        environment (tables, chairs, internet connection... and coffee!). Represented
+        projects will be announced on our site as they register.
+      </p>
+
+      <p>
+        During the two following days, you will have the opportunity to attend
+        presentations on various topics, about the Python programming language, its use
+        cases, good practice, feedback, shared ideas…
+      </p>
+
+      <p>
+        This event is hosted by the Campus René Cassin. Thanks to them :).
+      </p>
+
+      <p>
+        We ask everyone wishing to come to read the
+        <a href="{{ url_for('page', name='conduct', lang=lang) }}">code of conduct</a>.
+        We want this conference to be a welcoming event for
+        everyone. AFPy working group is mobilized to make everyone feel good
+        during the conference. Actions will be announced.
+      </p>
+
+      <p>
+        If you already want to organize your journey, we have prepared the
+        <a href="{{ url_for('page', name='venue', lang=lang) }}">Venue</a> page.
+      </p>
+
+      <p>
+        We have several other announcements for you in the coming weeks, so
+        follow us on <a href="https://mamot.fr/@AFPy">Mastodon</a>.
+      </p>
+
+      <p>
+        Come and chat with us on our <a href="https://www.afpy.org/discord">Discord</a> or our <a href="https://discuss.afpy.org/">Discourse</a>.
+      </p>
+    </section>
+  </article>
+{% endblock content %}

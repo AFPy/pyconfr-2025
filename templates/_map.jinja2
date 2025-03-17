@@ -1,0 +1,10 @@
+{% macro map(fullscreen) %}
+  <iframe id="map" allowfullscreen width="100%" scrolling="no" src="https://framacarte.org/en/map/pyconfr-2025_205226" loading="lazy"></iframe>
+  {% if fullscreen %}
+    <ul class="buttons">
+      <li>
+        <a href="https://framacarte.org/en/map/pyconfr-2025_205226">{{ fullscreen }}</a>
+      </li>
+    </ul>
+  {% endif %}
+{% endmacro %}

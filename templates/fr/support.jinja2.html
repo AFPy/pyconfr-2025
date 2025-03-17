@@ -1,0 +1,25 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Nous soutenir</h2>
+
+    {{ brochures(lang) }}
+
+    <section>
+      <h3>Nous aider avant et pendant l'événement</h3>
+
+      <p>
+        Si vous souhaitez nous aider pour la préparation de l'événement, et/ou
+        lors de l'événement, n'hésitez pas à nous contacter à
+        <a href="mailto:contact@afpy.org">contact@afpy.org</a>.
+      </p>
+
+      <p>
+        Toute aide bénévole lors de l'événement est la bienvenue !
+      </p>
+    </section>
+
+    {{ sponsoring(lang) }}
+  </article>
+{% endblock content %}

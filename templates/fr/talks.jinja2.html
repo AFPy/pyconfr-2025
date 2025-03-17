@@ -1,0 +1,64 @@
+{% extends '_layout.jinja2' %}
+
+{% block header %}
+  {{ super() }}
+  <nav>
+    <ul id="categories">
+      {% for slug, title in categories.items() %}
+        <li class="{{ 'active' if category == slug }}">
+          <a href="{{ url_for('talks', lang=lang, category=slug) }}">{{ title[lang] }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endblock header %}
+
+{% block content %}
+  <article>
+    <h2>{{ categories[category][lang] }}</h2>
+    {% if category == 'sprint' %}
+      <p>
+        La liste et les horaires des sprints sont définies. Pour les derniers détails d'organisation, consultez les personnes à l'accueil ou l'affichage proche.
+      </p>
+    {% endif %}
+
+    {% if category == 'sprint' %}
+      {% set talks = schedule.sprints %}
+    {% else %}
+      {% set talks = schedule.schedule %}
+    {% endif %}
+    {% for day, hours in talks.items() %}
+      {% for minutes, slots in hours.items() %}
+        {% for talk in slots.values() %}
+          {% if talk.submission_type.en | slug == category %}
+            <section>
+              <h3 id="talk-{{ talk.code }}">
+                <a href="#talk-{{ talk.code }}">{{ talk.title }}</a>
+              </h3>
+              <p>
+                {% for speaker in talk.speakers %}
+                  {% if speaker.avatar %}
+                    <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
+                  {% endif %}
+                  <a href="{{ url_for('page', name='speakers', lang=lang, _anchor="speaker-" + speaker.code) }}">{{ speaker.name }}{{ "," if not loop.last }}</a>
+                {% endfor %}
+              </p>
+              <p>
+                <em>
+                  {% if category == 'sprint' %}
+                    Jeudi et vendredi de 10 h 00 à 17 h 00
+                  {% else %}
+                    Salle {{ talk.slot.room[lang] }} −
+                    {{ day | format_day(lang) }} à {{ minutes | format_minutes(lang) }} −
+                    {{ talk.duration | format_duration }}
+                  {% endif %}
+                </em>
+              </p>
+              {{ talk.description | markdown | safe }}
+            </section>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </article>
+{% endblock content %}

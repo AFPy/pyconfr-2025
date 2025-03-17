@@ -1,0 +1,143 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article class="coverboard">
+    <h2>Bienvenue à la PyConFR 2025 !</h2>
+
+    <aside>
+      <span>16</span><sup>e</sup> édition
+    </aside>
+
+    <p class="pycon-date">Du 30 octobre au 2 novembre 2025 à Lyon</p>
+
+    <p>
+      Organisée par <a href="https://www.afpy.org">l'AFPy</a>, cette conférence de quatre
+      jours est gratuite, entièrement gérée par des bénévoles et dédiée
+      au regroupement des personnes intéressées par le langage de
+      programmation <a href="https://www.python.org/">Python</a>.
+    </p>
+
+    {#
+    <ul class="buttons">
+      <li>
+        <a class="register" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
+      </li>
+      <li>
+        <a class="schedule" href="{{ url_for('page', name='schedule', lang=lang) }}">Programme</a>
+      </li>
+    </ul>
+    #}
+  </article>
+
+  <article>
+    <h2>Programme</h2>
+
+    {#
+    <ul class="buttons">
+      <li>
+        <a class="details" href="{{ url_for('page', name='schedule', lang=lang) }}">Plus de détails</a>
+      </li>
+    </ul>
+    #}
+
+    <div class="event-description">
+      <section>
+        <aside class="subtitle">30 et 31 octobre</aside>
+        <h3>Développements participatifs : sprints !</h3>
+        <p>
+          Les développeurs et développeuses de différents projets open source se
+          rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
+          contribuer, et nous cherchons également à accompagner les débutantes.
+        </p>
+        <p class="important">
+          Participez au développement de votre projet préféré !
+        </p>
+        <p>
+          Nous fournissons l'espace et le matériel nécessaire à l'organisation
+          (tables, chaises, connexion internet… et café !).
+        </p>
+      </section>
+
+      <section>
+        <aside class="subtitle">1<sup>er</sup> &amp; 2 novembre</aside>
+        <h3>Conférences &amp; ateliers</h3>
+        <p>
+          Durant ces deux jours, vous aurez l'occasion de participer à des
+          présentations sur des sujets variés, autour du langage Python :
+        </p>
+        <ul>
+          <li>usages</li>
+          <li>bonnes pratiques</li>
+          <li>retours d'expériences</li>
+          <li>partages d'idées</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <article class="place">
+    <h2>Venir</h2>
+
+    <section>
+      <img src="{{ url_for('static', filename='images/partners/Campus René Cassin.png') }}"/>
+      <address><strong>Campus René Cassin</strong>
+        47 rue du Sergent Michel Berthet​
+        69009 Lyon
+      </address>
+      <ul class="buttons">
+        <li>
+          <a href="{{ url_for('page', name='venue', lang=lang) }}">
+            Plus de détails
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      {{ map() }}
+    </section>
+  </article>
+
+  <article class="afpy">
+    <h2>AFPy, Association Francophone Python</h2>
+
+    <ul class="buttons">
+      <li>
+        <a href="https://www.afpy.org">Notre site web</a>
+      </li>
+    </ul>
+
+    <section>
+      <h3>
+        L’AFPy promeut le langage Python, que ce soit auprès d’un public
+        averti ou débutant.
+      </h3>
+      <p>
+        Nous assurons la promotion du langage de programmation Python auprès du
+        plus large public possible.
+      </p>
+      <p>
+        Nous diffusons nos connaissances et sommes ouverts aux apports
+        extérieurs.
+      </p>
+      <p>
+        La solidarité et la démocratie élargissent les horizons et accroissent
+        le potentiel de chacun.
+      </p>
+    </section>
+  </article>
+
+  <article class="become-sponsor">
+    <aside class="subtitle">Soutenez-nous !</aside>
+    <h2>Devenez Sponsors !</h2>
+
+    {{ sponsors(lang, only_logo=True) }}
+
+    <section class="contact-sponsor">
+      <p>
+        L'équipe est disponible pour répondre à vos questions sur
+        l'événement à l'adresse <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
+      </p>
+    </section>
+  </article>
+{% endblock content %}

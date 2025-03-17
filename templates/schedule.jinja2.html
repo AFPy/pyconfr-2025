@@ -1,0 +1,78 @@
+{% extends '_layout.jinja2' %}
+
+{% block header %}{% endblock header %}
+{% block footer %}{% endblock footer %}
+
+{% set hours = schedule.schedule.values() | list %}
+{% set minutes = hours[0] | list %}
+{% set slot_duration = (minutes[1] | int) - (minutes[0] | int) %}
+{% set rooms = schedule.rooms | selectattr('in_conferences') | list %}
+{% set rowspans = [] %}
+
+{% block content %}
+  <table>
+    <thead class="rooms">
+      <tr>
+        <th></th>
+        {% for room in rooms %}
+          <th scope="col">{{ room.name[lang] }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    {% for day, hours in schedule.schedule.items() %}
+      <thead class="day">
+        <tr>
+          <th colspan="{{ (rooms | length) + 1 }}">{{ day | format_day(lang) }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for minutes, talks in hours.items() %}
+          <tr>
+            <th scope="row">{{ minutes | format_minutes(lang) }}</th>
+            {% for room in rooms %}
+              {% if room.id in rowspans %}
+                {{ rowspans.remove(room.id) or '' }}
+              {% else %}
+                {% if (room.id | string) in talks %}
+                  {% set talk = talks[(room.id | string)] %}
+                  {% set rowspan = (talk.duration - 1) // slot_duration + 1 %}
+                  {% for i in range(rowspan - 1) %}
+                    {{ rowspans.append(room.id) or '' }}
+                  {% endfor %}
+                  <td rowspan="{{ rowspan }}" class="submission {{ talk.submission_type.en | slug }}">
+                    <a href="{{ url_for('talks', category=talk.submission_type.en | slug, lang=lang, _anchor='talk-' + talk.code) }}" target="_parent">
+                      {{ talk.title }}
+                    </a>
+                    <aside class="type">
+                      {{ talk.submission_type[lang] }}<br>
+                      {{ talk.duration | format_duration }} |
+                      {% if talk.submission_type.en | slug != 'lightning-talks' %}{{ talk.content_locale }}{% endif %}
+                      {% if talk.answers and talk.submission_type.en %}|{% endif %}
+                      {% if talk.answers %}{{ talk.answers[0].options[0].answer[lang] | lower }}{% endif %}
+                    </aside>
+                    <aside class="speakers">
+                      {% for speaker in talk.speakers %}
+                        <a href="{{ url_for('page', name='speakers', lang=lang, _anchor="speaker-" + speaker.code) }}" target="_parent">{{ speaker.name }}</a>{{ ',' if not loop.last }}
+                      {% endfor %}
+                    </aside>
+                  </td>
+                {% elif loop.first and day in schedule.extra and minutes in schedule.extra[day] %}
+                  <td class="extra" id="{{ schedule.extra[day][minutes].id }}">
+                    <div>{{ schedule.extra[day][minutes].title[lang] }}</div>
+                  </td>
+                {% else %}
+                  <td></td>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </tr>
+          {% if loop.last %}
+            <tr>
+              <th>{{ ((minutes | int) + slot_duration) | format_minutes(lang) }}</th>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    {% endfor %}
+  </table>
+{% endblock content %}

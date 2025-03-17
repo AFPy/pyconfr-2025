@@ -1,0 +1,147 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Venir</h2>
+    <section>
+      <h3>Adresse</h3>
+      <p>
+        PyConFR 2025 est hébergée
+        par le <a href="https://www.campus-renecassin.com/">Campus René Cassin</a> à Lyon.
+      </p>
+      <address><strong>Campus René Cassin</strong>
+        47 rue du Sergent Michel Berthet​
+        69009 Lyon
+      </address>
+      <p>
+        Coordonnées GPS : <a href="https://framacarte.org/en/map/pyconfr-2025_205226">45.76845 4.80609</a>
+      </p>
+      {{ map('Voir en plein écran') }}
+    </section>
+
+    <section>
+      <h3>Visa</h3>
+
+      <h4>Savoir si vous avez besoin d’un visa</h4>
+      <p>
+        Si vous souhaitez venir à la PyConFR 2025 à Lyon,
+        vérifiez si vous avez besoin d’un visa pour entrer en France
+        et faites-en la demande le plus tôt possible.
+      </p>
+      <p>
+        La France fait partie de l’espace Schengen. Si vous avez déjà
+        un visa Schengen valide, vous n’avez pas besoin de faire de
+        demande supplémentaire. <strong>N’hésitez pas à vous rapprocher de
+        votre consulat ou ambassade en cas de doute</strong>.
+      </p>
+      <p>
+        Vous pouvez également consulter le <a href="https://france-visas.gouv.fr/web/france-visas/assistant-visa">site France Visas</a> afin de
+        savoir si vous avez besoin d’un visa ou non.
+      </p>
+
+      <h4>Lettre d’invitation</h4>
+      <p>
+        Dans le cas où vous auriez besoin d’un visa, nous pouvons vous
+        transmettre une lettre d’invitation pour votre demande.
+      </p>
+      <p>
+        Les demandes de lettre d’invitation doivent être faites par mail <a href="mailto:secretaire@afpy.org">secretaire@afpy.org</a>.
+        Merci d’inclure les informations suivantes dans votre demande :
+      </p>
+      <ul>
+        <li>Civilité,</li>
+        <li>Nom et prénom,</li>
+        <li>Date de naissance,</li>
+        <li>Nationalité,</li>
+        <li>Numéro de passeport,</li>
+        <li>Titre de votre présentation à l’évènement (si applicable),</li>
+        <li>Montant de la bourse accordée par l’AFPy (si applicable),</li>
+        <li>Nom de l’entreprise sponsor que vous représentez (si applicable).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Rejoindre le campus</h3>
+
+      <section>
+        <h4>En voiture</h4>
+        <p>
+          Le campus se situe dans le quartier de Vaise / Gorge de Loup, à proximité de
+          la sortie 38 de l’autoroute A6/M6 (l’entrée nord du tunnel de Fourvière).
+        </p>
+        <p>
+          Vous venez en voiture, il vous reste de la place ? Pensez au
+          covoiturage :).
+        </p>
+      </section>
+
+      <section>
+        <h4>En transports en commun</h4>
+        <p>
+          Le campus est accessible en <a href="https://www.tcl.fr/">transports en commun</a> :
+        </p>
+        <ul>
+          <li>
+            En métro : arrêt Gorge de Loup de la ligne D,
+          </li>
+          <li>
+            En bus : arrêt Gorge de Loup.
+          </li>
+        </ul>
+        <p>
+          Il est possible de payer tous les trajets directement avec une carte
+          bleue, dans tous les bus, tramways et métros.
+        </p>
+      </section>
+
+      <section>
+        <h4>En train</h4>
+        <p>
+          Depuis la Gare Part-Dieu, il est possible de prendre le métro B
+          jusqu’à l’arrêt Saxe-Gambetta, puis le métro D jusqu’à l’arrêt
+          Gorge de Loup (environ 20 minutes).
+        </p>
+        <p>
+          Depuis la Gare de Perrache, il est possible de prendre le métro A
+          jusqu’à l’arrêt Bellecour, puis le métro D jusqu’à l’arrêt
+          Gorge de Loup (environ 15 minutes).
+        </p>
+      </section>
+
+      <section>
+        <h4>En avion</h4>
+        <p>
+          Depuis l’aéroport Saint-Exupéry, il est possible de prendre le tramway
+          Rhône Express jusqu’à l’arrêt Carré de Soie, puis le métro A jusqu’à
+          l’arrêt Bellecour, puis le métro D jusqu’à l’arrêt Gorge de Loup
+          (environ 45 minutes).
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h3>Conseils pour le logement</h3>
+      <p>
+        L’emplacement idéal pour être à la fois en centre-ville et proche de
+        la conférence est Bellecour, mais c’est un quartier très touristique
+        et donc potentiellement cher.
+      </p>
+      <p>
+        Afin de faciliter votre venue à la conférence et de vous permettre d’accéder
+        facilement au centre-ville, essayez d’être proche d’une station de
+        métro A (entre Perrache et Charpennes), B (entre Jean Macé et Charpennes)
+        ou D (entre Saxe-Gambetta et Gorge de Loup).
+      </p>
+      <p>
+        Voici quelques hôtels assez abordables et bien situés :
+      </p>
+      <ul>
+        <li><a href="https://www.myresidhome.com/lyon/sejours-affaires-park-lane/apparthotel-residence-hoteliere.html">Lyon Park Lane</a> (environ 60 €),</li>
+        <li><a href="https://www.yasihostel.com/">Yasi Hostel</a> (environ 80 €),</li>
+        <li><a href="https://lyon-centre.campanile.com/">Campanile Lyon Centre – Berges du Rhône</a> (environ 80 €),</li>
+        <li><a href="https://all.accor.com/hotel/7413/index.fr.shtml">Ibis budget Lyon Part-Dieu</a> (environ 95 €),</li>
+        <li><a href="https://www.discoverasr.com/fr/citadines/france/citadines-presquile-lyon">Citadines Presqu’île</a> (environ 100 €).</li>
+      </ul>
+    </section>
+  </article>
+{% endblock content %}

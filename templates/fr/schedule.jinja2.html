@@ -1,0 +1,213 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Programme</h2>
+
+    <section class="event-description">
+      <section>
+        <aside class="subtitle">30 &amp; 31 octobre</aside>
+        <h3>Développements participatifs : sprints !</h3>
+        <p>
+          Les développeurs et développeuses de différents projets open source se
+          rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
+          contribuer, et nous cherchons également à accompagner les débutantes.
+        </p>
+        <p class="important">
+          Participez au développement de votre projet préféré !
+        </p>
+        <p>
+          Nous fournissons l'espace et le matériel nécessaire à l'organisation
+          (tables, chaises, connexion internet… et café !).
+        </p>
+        {#
+        <ul class="buttons">
+          <li>
+            <a href="{{ url_for('talks', lang=lang, category='sprint') }}">Voir la liste des sprints</a>
+          </li>
+        </ul>
+        #}
+      </section>
+
+      <section>
+        <aside class="subtitle">1<sup>er</sup> &amp; 2 novembre</aside>
+        <h3>Conférences &amp; ateliers</h3>
+        <p>
+          Durant ces deux jours, vous aurez l'occasion de participer à des
+          présentations sur des sujets variés, autour du langage Python :
+        </p>
+        <ul>
+          <li>usages</li>
+          <li>bonnes pratiques</li>
+          <li>retours d'expériences</li>
+          <li>partages d'idées</li>
+        </ul>
+        {#
+        <ul class="buttons">
+          <li>
+            <a href="#calendar">Voir le programme</a>
+          </li>
+        </ul>
+        #}
+      </section>
+    </section>
+
+    {#
+    <section class="keynotes">
+      <h3>Keynotes</h3>
+
+      <dl>
+        <dt><a href="{{ url_for('page', name='speakers', lang=lang, _anchor='speaker-9HXPDQ') }}">Houleymatou Baldé</a></dt>
+        <dd><img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png') }}" alt="Photo de Houleymatou Baldé"></dd>
+        <dd>Fondatrice IT Woman by YEESO</dd>
+        <dd><a href="{{ url_for('talks', lang=lang, category='plenary', _anchor='talk-LAXRUP') }}">De villageoise à l’itWoman… Quelles actions pour faire de mon rêve TECH une réalité ?</a></dd>
+      </dl>
+
+      <dl>
+        <dt><a href="{{ url_for('page', name='speakers', lang=lang, _anchor='speaker-WLFZBG') }}">Françoise Conil</a></dt>
+        <dd><img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg') }}" alt="Photo de Françoise Conil"></dd>
+        <dd>Développeuse d'applications au CNRS</dd>
+        <dd><a href="{{ url_for('talks', lang=lang, category='plenary', _anchor='talk-88RCKR') }}">Recherche des bonnes pratiques de packaging</a></dd>
+      </dl>
+
+      <dl>
+        <dt><a href="{{ url_for('page', name='speakers', lang=lang, _anchor='speaker-98TUDC') }}">Ines Montani</a></dt>
+        <dd><img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg') }}" alt="Photo d’Ines Montani"></dd>
+        <dd>Fondatrice d'Explosion</dd>
+        <dd><a href="{{ url_for('talks', lang=lang, category='plenary', _anchor='talk-SVUGC3') }}"><quote>Reality is not an end-to-end prediction problem: Applied NLP in the age of Generative AI</a></dd>
+      </dl>
+    </section>
+
+    <section class="calendar">
+      <h3>Calendrier</h3>
+      <p>
+        Le calendrier est disponible ci-dessous,
+        sur une <a href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
+        en <a href="{{ url_for('pdf_schedule', lang=lang) }}">format PDF</a>,
+        ou dans votre <a href="{{ url_for('calendar', lang=lang) }}">application de calendrier favorite</a>.
+      </p>
+      <p>
+        Vous pouvez également lire la description des
+        <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plénières</a>, des
+        <a href="{{ url_for('talks', lang=lang, category='long-talk') }}">conférences longues</a>, des
+        <a href="{{ url_for('talks', lang=lang, category='short-talk') }}">conférences courtes</a>, des
+        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
+        <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+      </p>
+      <p>
+        Vous pouvez également lire la biographie des
+        <a href="{{ url_for('page', name='speakers', lang=lang) }}">orateurices</a>.
+      </p>
+
+      <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+    </section>
+
+    <section id="register">
+      <h3>Inscriptions</h3>
+
+      <p>
+        L’accès aux sprints, aux conférences et aux ateliers de PyConFR est
+        gratuit.
+      </p>
+      <p>
+        Cependant, <strong>l’inscription est obligatoire pour toutes et tous</strong>,
+        y compris membres du comité d’organisation, bénévoles,
+        conférencières, conférenciers et sponsors.
+      </p>
+      <p>
+        Les inscriptions sont ouvertes jusqu’à la fin de l’évènement dans la limite de :
+      </p>
+      <ul>
+        <li>200 personnes pour les sprints,</li>
+        <li>1 000 personnes pour les conférences et ateliers,</li>
+        <li>150 personnes pour <a href="#dinner">le repas du samedi soir</a>.</li>
+      </ul>
+      <ul class="buttons">
+        <li>
+          <a href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2025">Inscriptions PyConFR</a>
+        </li>
+      </ul>
+      <p>
+        Il est possible lors de cette inscription de :
+      </p>
+      <ul>
+        <li>pré-réserver des t-shirts (15 €), qui seront également vendus lors de la conférence mais en nombre limité,</li>
+        <li>vous inscrire pour le repas du samedi soir (30 €).</li>
+      </ul>
+      <p>
+        ⚠️ La commande de t-shirts et réservation de la soirée du
+        samedi soir entrainent des frais pour l’AFPy. <strong>Aucun
+        remboursement ne sera possible après l’évènement.</strong>
+      </p>
+      <p>
+        Les inscriptions à <a href="#children-area">l’espace enfants</a> sont ouvertes jusqu’à 15 jours avant le début de l’évènement, soit le <strong>14 octobre</strong>.
+      </p>
+      <ul class="buttons">
+        <li>
+          <a href="https://www.helloasso.com/associations/afpy/evenements/espace-enfants-a-la-pyconfr-2025">Inscriptions espace enfants</a>
+        </li>
+      </ul>
+
+      <p>
+        Les inscriptions au <a href="{{ url_for('talks', lang=lang, category='lunch', _anchor='talk-MRHUVD') }}">déjeuner PyLadies</a> sont ouvertes jusqu’au <strong>27 octobre</strong>.
+      </p>
+
+      <ul class="buttons">
+        <li>
+          <a href="https://www.helloasso.com/associations/afpy/evenements/dejeuner-pyladies-a-la-pyconfr-2025">Inscriptions déjeuner PyLadies</a>
+        </li>
+      </ul>
+
+      <p>
+        Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
+        qui organise chaque année cet événement,
+        en <a href="https://www.helloasso.com/associations/afpy/formulaires/1/">faisant
+        un don</a>. Si vous souhaitez avoir une voix à son assemblée générale,
+        qui aura lieu le dimanche matin, vous
+        devez <a href="https://www.afpy.org/adherer">devenir membre</a>.
+      </p>
+    </section>
+
+    <section id="children-area">
+      <h3>Espace enfants</h3>
+
+      <p>
+        Un espace enfants est mis en place <strong>durant les quatre jours</strong> de la
+        PyConFR et est animé par <a href="https://www.babychou.com/">Babychou Services</a>.
+      </p>
+      <p>
+        L’espace enfants accueille <strong>un maximum de 18 enfants, de 3 ans à 12 ans</strong>.
+      </p>
+      <p>
+        Les inscriptions seront ouvertes en même temps que les inscriptions pour
+        l’évènement et jusqu’à 15 jours avant le début de la PyConFR.
+        Une priorité est donnée aux personnes animant des sprints, conférences et ateliers.
+      </p>
+    </section>
+
+    <section id="dinner">
+      <h3>Repas du samedi soir</h3>
+      <p>
+        Un repas est organisé le samedi soir, de 19 h 30 à 23 h 00, au <a href="https://www.letigre.eu/le-petit-tigre/presentation">Petit Tigre</a>
+        (5 Rue du Faubourg-National, Strasbourg),
+        uniquement pour les personnes ayant réservé lors de leur inscription.
+      </p>
+      <p>
+        Ce repas comprend un cocktail dînatoire comprenant :
+      </p>
+      <ul>
+        <li>Planches mixte charcuterie / fromages,</li>
+        <li>Crudités,</li>
+        <li>Salade de quinoa,</li>
+        <li>Wok de légumes et steaks de soja,</li>
+        <li>Tartes flambées salées et sucrées,</li>
+        <li>Deux verres (bière, vin, boisson sans alcool, café, infusion).</li>
+      </ul>
+      <p>
+        L’achat d’autres boissons alcoolisées (non comprises dans le prix) est possible
+        lors du repas.
+      </p>
+    </section>
+    #}
+  </article>
+{% endblock content %}

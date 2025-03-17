@@ -1,0 +1,281 @@
+{% macro brochures(lang) %}
+  {#
+  <ul class="buttons">
+    {% if lang == 'fr' %}
+      <li><a href="{{ url_for('static', filename='brochures/brochure_fr.pdf') }}">Brochure de sponsoring</a></li>
+    {% elif lang == 'en' %}
+      <li><a href="{{ url_for('static', filename='brochures/brochure_en.pdf') }}">Sponsoring brochure</a></li>
+    {% endif %}
+  </ul>
+  #}
+{% endmacro %}
+
+{% macro description(company, lang) %}
+  <div class="description">
+    {% if lang == 'fr' %}
+      {% if company == 'Campus René Cassin' %}
+        <p>
+          …
+        </p>
+      {% endif %}
+    {% elif lang == 'en' %}
+      {% if company == 'Campus René Cassin' %}
+        <p>
+          …
+        </p>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+
+{% macro sponsors(lang, only_logo=False) %}
+  {% set levels = {
+    'Platine' if lang == 'fr' else 'Platinum': {
+      'Campus René Cassin': 'https://www.campus-renecassin.com/',
+    },
+
+    'Or' if lang == 'fr' else 'Gold': {
+    },
+
+    'Argent' if lang == 'fr' else 'Silver': {
+    },
+
+    'Bronze': {
+    },
+
+    'Cœur' if lang == 'fr' else 'Heart': {
+    },
+
+    'Partenaires' if lang == 'fr' else 'Partners': {
+    },
+  } %}
+
+  {% set png_logos = ('Campus René Cassin') %}
+
+  {% if lang == 'fr' %}
+    <p>
+      <a href="{{ url_for('page', name='support', lang=lang)}}">Devenez sponsor</a> et
+      offrez à votre entreprise une plus grande visibilité lors de cet événement.
+    </p>
+  {% else %}
+    <p>
+      <a href="{{ url_for('page', name='support', lang=lang)}}">Become sponsor</a> to
+      offer a wider visibility to your enterprise during this event.
+    </p>
+  {% endif %}
+
+  {{ brochures() }}
+
+  {% for level, companies in levels.items() %}
+    {% if companies %}
+      <section class="sponsors">
+        <h3>{{ level }}</h3>
+        {% for company, link in companies.items() %}
+            {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
+              <div class="sponsor">
+                <h4>{{ company }}</h4>
+            {% endif %}
+            {% if link %}
+              <a href="{{ link }}" class="logo">
+            {%- endif -%}
+              <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" loading="lazy" />
+            {%- if link -%}
+              </a>
+            {% endif %}
+            {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
+                {{ description(company, lang) }}
+              </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+    </section>
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro sponsoring(lang) %}
+  {% if lang == 'en' %}
+    <section>
+      <h3>Sponsor PyConFR</h3>
+
+      <p>
+        Patronage allows us each year to cover costs such as safety, hot and cold
+        drinks, cleaning, video coverage, financial assistance…
+      </p>
+
+      <p>
+        PyConFR is organized by volunteers from the francophone Python community
+        and allows this community to meet, exchange and grow each year.
+      </p>
+
+      <p>
+        If you wish to support us financially, you can contact the treasurer of
+        AFPy (<a href="mailto:tresorier@afpy.org">tresorier@afpy.org</a>) in
+        order to discuss the details.
+      </p>
+
+      <p>
+        This year, we propose the following amounts and counterparts:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Heart (free amount)</th>
+            <th>Bronze (€500)</th>
+            <th>Silver (€1,000)</th>
+            <th>Gold (€2,000)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name and logo on the <a href="{{ url_for('page', name='sponsors', lang=lang) }}">"Sponsors" page</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>1000-character presntation on the <a href="{{ url_for('page', name='sponsors', lang=lang) }}">"Sponsors" page</a></td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Logo on the <a href="{{ url_for('page', name='index', lang=lang) }}">index page</a></td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Logo on posters</td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Kakemono in conference rooms</td>
+            <td> -</td>
+            <td> -</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Presentation of the enterprise (2 min) at the conferences kick-off (Saturday)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Stand in the hall (Saturday and Sunday)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✔</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Benefits are available as soon as the invoice is paid.</strong></p>
+    </section>
+  {% elif lang == 'fr' %}
+    <section>
+      <h3>Financer PyConFR</h3>
+
+      <p>
+        Le mécénat nous permet chaque année de couvrir les frais comme la
+        sécurité, des boissons chaudes et fraîches, le nettoyage, la captation
+        vidéo, les bourses…
+      </p>
+
+      <p>
+        PyConFR est organisé par des bénévoles de la communauté Python
+        francophone et permet à cette communauté de se rencontrer, d'échanger et
+        de grandir chaque année.
+      </p>
+
+      <p>
+        Si vous souhaitez nous soutenir financièrement, vous pouvez contacter le
+        trésorier de l'AFPy
+        (<a href="mailto:tresorier@afpy.org">tresorier@afpy.org</a>) afin de
+        discuter des détails.
+      </p>
+
+      <p>
+        Cette année, nous proposons les montants et contreparties suivantes :
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Bénéfice</th>
+            <th>Cœur (montant libre)</th>
+            <th>Bronze (500 €)</th>
+            <th>Argent (1000 €)</th>
+            <th>Or (2000 €)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nom et logo sur <a href="{{ url_for('page', name='sponsors', lang=lang) }}">la page « Sponsors »</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Présentation de 1000 caractères sur <a href="{{ url_for('page', name='sponsors', lang=lang) }}">la page « Sponsors »</a></td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Logo sur <a href="{{ url_for('page', name='sponsors', lang=lang) }}">la page d'accueil</a></td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Logo sur les affiches</td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Panneau dans les salles de conférence</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Présentation de l'entreprise (2 min) en conférence plénière (samedi)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✔</td>
+            <td>✔</td>
+          </tr>
+          <tr>
+            <td>Stand dans le hall (samedi et dimanche)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>✔</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Les contreparties sont effectives dès réception du règlement.</strong></p>
+
+    </section>
+  {% endif %}
+{% endmacro %}
