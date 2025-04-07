@@ -16,6 +16,10 @@
 
 {%- set title = title or dict(TITLES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}
 
+{%- set nav_label = 'Menu principal' if lang == 'fr' else 'Main menu' -%}
+{%- set lang_label = 'Changer de langue' if lang == 'fr' else 'Switch languages' -%}
+{%- set footer_label = 'Pied de page' if lang == 'fr' else 'Footer' -%}
+
 {%- from '_sponsors.jinja2' import brochures, sponsoring, sponsors -%}
 {%- from '_map.jinja2' import map -%}
 
@@ -39,7 +43,7 @@
       <header>
         <h1><a href="{{ url_for('page', lang=lang) }}">PyConFR 2025</a></h1>
 
-        <nav>
+        <nav aria-label="{{ nav_label }}">
           <ul id="pages">
             {% for endpoint, (title_fr, title_en) in MENU %}
               <li class="{{ 'active' if page_name == endpoint }}">
@@ -49,7 +53,7 @@
           </ul>
         </nav>
 
-        <nav>
+        <nav aria-label="{{ lang_label }}">
           {% if request.endpoint in ('page', 'talks') %}
             {% set view_args = request.view_args %}
             {{ view_args.pop('lang', 'en') and '' }}
@@ -83,15 +87,17 @@
 
     {% block footer %}
       <footer>
-        <ul>
-          <li><a href="mailto:contact@pycon.fr">Email</a></li>
-          <li><a href="https://mamot.fr/@AFPy">Mastodon</a></li>
-          <li><a href="https://fr.linkedin.com/company/afpy">LinkedIn</a></li>
-          <li><a href="https://discuss.afpy.org/">Discourse</a></li>
-          <li><a href="https://github.com/AFPy/pyconfr-2025">GitHub</a></li>
-          <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
-          <li><a href="https://afpy.org/">© 2025 AFPy</a></li>
-        </ul>
+        <nav aria-label="{{ footer_label }}">
+          <ul>
+            <li><a href="mailto:contact@pycon.fr">Email</a></li>
+            <li><a href="https://mamot.fr/@AFPy">Mastodon</a></li>
+            <li><a href="https://fr.linkedin.com/company/afpy">LinkedIn</a></li>
+            <li><a href="https://discuss.afpy.org/">Discourse</a></li>
+            <li><a href="https://github.com/AFPy/pyconfr-2025">GitHub</a></li>
+            <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
+            <li><a href="https://afpy.org/">© 2025 AFPy</a></li>
+          </ul>
+        </nav>
       </footer>
     {% endblock footer %}
   </body>
