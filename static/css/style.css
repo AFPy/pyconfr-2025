@@ -139,6 +139,10 @@ iframe {
   border-radius: 1em;
 }
 
+img {
+  max-width: 100%;
+}
+
 table {
   border-collapse: collapse;
   margin: auto;
@@ -214,6 +218,15 @@ aside.subtitle {
       margin: 0.5em 0;
     }
   }
+}
+
+.sponsors img {
+  display: inline-block;
+  height: 100px;
+  margin: 1rem;
+  object-fit: contain;
+  vertical-align: middle;
+  width: 200px;
 }
 
 

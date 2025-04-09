@@ -15,13 +15,93 @@
     {% if lang == 'fr' %}
       {% if company == 'Campus René Cassin' %}
         <p>
-          …
+          Acteur éducatif incontournable de la région Auvergne-Rhône-Alpes,
+          le Campus René Cassin est le lieu fédérant depuis 20 ans la plus
+          grande diversité d’écoles et de centres de formation de la région
+          avec 13 filières de compétences métiers au service d’un lien formation-emploi réussi.
+        </p>
+        <p>
+          Depuis sa création, ce lieu unique reste fidèle à sa promesse
+          d’accompagner ses étudiants à entreprendre leur futur avec confiance
+          et enthousiasme et de répondre aux besoins de recrutement des
+          entreprises pour soutenir leur développement.​
+        </p>
+      {% elif company == 'IPI' %}
+        <p>
+          L’IPI, école d’informatique du Groupe IGENSIA Education, accompagne
+          chaque année plus de 1000 apprenants dans leur développement
+          professionnel à travers des diplômes reconnus par l’État et des
+          programmes adaptés à leurs besoins.
+        </p>
+        <p>
+          L’IPI vise à former des informaticiens experts, responsables
+          et adaptables pour répondre aux nécessités d’un monde en constante mutation.
+        </p>
+        <p>
+          Notre ambition est de donner à tous nos apprenants les codes de
+          réussite incontournables permettant de réussir dans un secteur
+          exigeant qui demande expertise et compréhension des enjeux économiques,
+          financiers et stratégiques de l’entreprise, ainsi qu’un sens aigu de la relation client.
+        </p>
+      {% elif company == 'EPSI' %}
+        <p>
+          L’EPSI est l’école de l’ingénierie informatique créée en 1961
+          par des professionnels du secteur pour répondre en temps réel
+          aux besoins en compétences des entreprises et des territoires.
+          Aujourd’hui l’école forme des experts dans les domaines de l’IA,
+          de la cybersécurité, du cloud, de la data, du développement et de
+          l’infrastructure système.
+        </p>
+        <p>
+          Nous sommes une école post-bac sans prépa qui ouvre le champ de tous
+          les possibles aux passionnés de coding et d’innovation. Accessible à
+          tous les profils, avec un niveau d’exigence et d’accompagnement maximum.
+          Nos formations sont accessibles par l’apprentissage et la VAE.
         </p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
         <p>
-          …
+          A key educational player in the Auvergne-Rhône-Alpes region,
+          the René Cassin Campus has for 20 years united the widest
+          range of schools and training centers in the region, with
+          13 professional skills streams to ensure a successful training-employment link.
+        </p>
+        <p>
+          Since its creation, this unique place has remained true to
+          its promise to help students embark on their future with confidence
+          and enthusiasm, and to meet the recruitment needs of companies to
+          support their development.
+        </p>
+      {% elif company == 'IPI' %}
+        <p>
+          IPI, the IGENSIA Education Group's IT school, supports over
+          1,000 learners every year in their professional development
+          through state-recognized diplomas and programs tailored to their needs.
+        </p>
+        <p>
+          IPI aims to train expert, responsible and adaptable IT professionals
+          to meet the needs of a constantly changing world.
+        </p>
+        <p>
+          Our ambition is to provide all our students with the essential
+          keys to success in a demanding sector that requires expertise and
+          understanding of the economic, financial and strategic challenges
+          facing companies, as well as a keen sense of customer relations.
+        </p>
+      {% elif company == 'EPSI' %}
+        <p>
+          EPSI is the IT engineering school founded in 1961 by industry
+          professionals to respond in real time to the skills needs of
+          companies and regions. Today, the school trains experts in the
+          fields of AI, cybersecurity, cloud, data, development and system infrastructure.
+        </p>
+        <p>
+          We are a post-baccalaureate school with no preparatory courses,
+          opening up a whole new world of possibilities for those with a
+          passion for coding and innovation. Accessible to all profiles,
+          with the highest standards and support. Our courses are accessible
+          via apprenticeship and VAE.
         </p>
       {% endif %}
     {% endif %}
@@ -31,27 +111,29 @@
 
 {% macro sponsors(lang, only_logo=False) %}
   {% set levels = {
-    'Platine' if lang == 'fr' else 'Platinum': {
-      'Campus René Cassin': 'https://www.campus-renecassin.com/',
-    },
+      'Platine' if lang == 'fr' else 'Platinum': {
+          'Campus René Cassin': 'https://www.campus-renecassin.com/',
+          'IPI': 'https://www.ipi-ecoles.com/category/campus/lyon/',
+          'EPSI': 'https://www.epsi.fr/campus/lyon'
+      },
 
-    'Or' if lang == 'fr' else 'Gold': {
-    },
+      'Or' if lang == 'fr' else 'Gold': {
+      },
 
-    'Argent' if lang == 'fr' else 'Silver': {
-    },
+      'Argent' if lang == 'fr' else 'Silver': {
+      },
 
-    'Bronze': {
-    },
+      'Bronze': {
+      },
 
-    'Cœur' if lang == 'fr' else 'Heart': {
-    },
+      'Cœur' if lang == 'fr' else 'Heart': {
+      },
 
-    'Partenaires' if lang == 'fr' else 'Partners': {
-    },
+      'Partenaires' if lang == 'fr' else 'Partners': {
+      },
   } %}
 
-  {% set png_logos = ('Campus René Cassin') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI') %}
 
   {% if lang == 'fr' %}
     <p>
