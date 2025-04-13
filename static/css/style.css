@@ -50,16 +50,20 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  background: url(../images/logo-simple.svg) center / contain;
   font-size: 0;
-  height: 2.5rem;
-  width: 9.5rem;
+
+  a {
+    background: url(../images/logo-simple.svg) center / contain;
+    display: block;
+    height: 2.5rem;
+    width: 9.5rem;
+  }
 }
 
 h2 {
   font-size: 3em;
-  letter-spacing: -0.03em;
-  line-height: 0.9;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   margin: 1.5em 0 1em;
   text-align: center;
   text-transform: uppercase;
@@ -67,13 +71,14 @@ h2 {
 
 h3 {
   font-size: 2.2em;
-  line-height: 0.9;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   margin: 1.5em 0 0.75em;
 }
 
 h4 {
   font-size: 1.4em;
-  line-height: 0.9;
+  line-height: 1.1;
   margin: 2em 0 0.75em;
 }
 
@@ -132,6 +137,7 @@ footer {
 }
 
 footer {
+  justify-content: center;
   margin-top: 5rem;
 }
 
@@ -260,7 +266,7 @@ aside.subtitle {
     content: url(../images/logo-full.svg);
     display: block;
     font-size: 4em;
-    margin: 0.5em 0;
+    margin: 0.5em 0 0.35em;
     text-align: center;
   }
 
