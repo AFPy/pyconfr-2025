@@ -19,7 +19,7 @@ schedule: .venv
 	.venv/bin/python schedule.py
 
 deploy: static
-	rsync -vazh --delete build/2025/ pyconfr@deb2.afpy.org:/var/www/pycon.fr/2025/
+	rsync -vazh --delete build/2025/ pyconfr@pycon.fr:/var/www/pycon.fr/2025/
 
 clean:
 	rm -rf build .venv __pycache__
