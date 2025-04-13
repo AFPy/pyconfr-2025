@@ -53,7 +53,7 @@ h1 {
   font-size: 0;
 
   a {
-    background: url(../images/logo-simple.svg) center / contain;
+    background: url(../images/logo-simple.svg) center / contain no-repeat;
     display: block;
     height: 2.5rem;
     width: 9.5rem;
@@ -263,11 +263,12 @@ aside.subtitle {
 
 #index {
   main::before {
-    content: url(../images/logo-full.svg);
+    background: url(../images/logo-full.svg) center / contain no-repeat;
+    content: "";
     display: block;
-    font-size: 4em;
-    margin: 0.5em 0 0.35em;
-    text-align: center;
+    margin: 2.5em 0;
+    height: 8em;
+    width: 100%;
   }
 
   .coverboard {
@@ -718,11 +719,27 @@ aside.subtitle {
     &:has(nav:first-of-type:hover) > *:not(:has(#pages)) {
       display: none;
     }
+
+    #languages li {
+      font-size: 0.8em;
+    }
   }
 
   footer ul {
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.6em;
+  }
+
+  h4 {
+    font-size: 1.4em;
   }
 
   p {
@@ -739,10 +756,6 @@ aside.subtitle {
   }
 
   #index {
-    main::before {
-      font-size: 2em;
-    }
-
     .coverboard {
       padding: 5em 10%;
 
