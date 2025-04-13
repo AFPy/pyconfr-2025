@@ -1,20 +1,33 @@
+/* Fonts */
+
+@font-face {
+  font-family: JetBrains;
+  src: url(../fonts/JetBrains.ttf);
+}
+
+@font-face {
+  font-family: Archivo;
+  src: url(../fonts/Archivo.ttf);
+}
+
 /* Colors */
 
 :root {
-  --back: white;
-  --dark-back: #eee;
-  --text: black;
-  --main: red;
-  --secondary: purple;
+  --blue: #1f2041;
+  --green: #00e49b;
+  --light-blue: #e3f2fd;
+  --purple: #6369d1;
+  --white: white;
 }
 
 
 /* Common tags */
 
 html {
-  background: var(--back);
-  color: var(--text);
-  font: 14pt sans-serif;
+  background: var(--white);
+  color: var(--blue);
+  font: 14pt Archivo;
+  line-height: 1.4;
 }
 
 body {
@@ -32,8 +45,15 @@ main {
   width: 100%;
 }
 
+h1, h2, h3, h4 {
+  font-family: JetBrains;
+}
+
 h1 {
-  font-size: 1em;
+  background: url(../images/logo-simple.svg) center / contain;
+  font-size: 0;
+  height: 2.5rem;
+  width: 9.5rem;
 }
 
 h2 {
@@ -54,11 +74,11 @@ h3 {
 h4 {
   font-size: 1.4em;
   line-height: 0.9;
-  margin: 1.5em 0 0.75em;
+  margin: 2em 0 0.75em;
 }
 
 a {
-  color: var(--main);
+  color: var(--purple);
 }
 
 article {
@@ -70,9 +90,9 @@ article {
 header,
 footer {
   align-items: center;
-  background: var(--secondary);
+  background: var(--blue);
   box-sizing: border-box;
-  color: var(--back);
+  color: var(--white);
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
@@ -85,9 +105,10 @@ footer {
     color: inherit;
     text-decoration: none;
 
-    li.active & {
+    li.active &,
+    &:hover {
       text-decoration: underline;
-      text-decoration-color: var(--main);
+      text-decoration-color: var(--green);
       text-underline-offset: 0.3em;
     }
   }
@@ -119,7 +140,7 @@ ol {
   padding: 0 1.5em;
 
   li::marker {
-    color: var(--main);
+    color: var(--green);
   }
 }
 
@@ -136,7 +157,6 @@ sup {
 
 iframe {
   border: 0;
-  border-radius: 1em;
 }
 
 img {
@@ -149,7 +169,7 @@ table {
 
   th,
   td {
-    border: 1px solid var(--dark-back);
+    border: 1px solid var(--light-blue);
     padding: 0.25em;
   }
 }
@@ -168,12 +188,16 @@ ul.buttons {
     display: block;
 
     a {
-      background: var(--main);
-      border-radius: 0.5em;
-      color: var(--back);
+      background: var(--green);
+      color: var(--blue);
       display: block;
       padding: 0.75em;
       text-decoration: inherit;
+      transition: 0.3s;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
     }
   }
 
@@ -188,7 +212,7 @@ ul.buttons {
 }
 
 aside.subtitle {
-  color: var(--main);
+  color: var(--green);
   font-weight: bold;
   font-size: 1.3em;
   text-transform: uppercase;
@@ -209,8 +233,7 @@ aside.subtitle {
   gap: 1em;
 
   section {
-    background: var(--dark-back);
-    border-radius: 1em;
+    background: var(--light-blue);
     flex: 1 0;
     padding: 2em;
 
@@ -234,7 +257,7 @@ aside.subtitle {
 
 #index {
   main::before {
-    content: "PyConFR 2025";
+    content: url(../images/logo-full.svg);
     display: block;
     font-size: 4em;
     margin: 0.5em 0;
@@ -253,9 +276,9 @@ aside.subtitle {
     }
 
     aside {
-      background: var(--main);
+      background: var(--green);
       border-radius: 100%;
-      color: var(--back);
+      color: var(--blue);
       height: 3.5em;
       font-size: 0.9em;
       letter-spacing: -0.03em;
@@ -277,14 +300,13 @@ aside.subtitle {
     }
 
     .pycon-date {
-      color: var(--main);
+      color: var(--green);
       font-weight: bold;
     }
 
     &::before {
-      background: var(--back);
+      background: var(--white);
       bottom: 4rem;
-      border-radius: 1em;
       content: "";
       display: block;
       left: calc(50% - 32rem);
@@ -321,6 +343,7 @@ aside.subtitle {
 
     img {
       margin: 1em 0;
+      width: 10rem;
     }
 
     section:has(iframe) {
@@ -333,8 +356,8 @@ aside.subtitle {
   }
 
   .afpy {
-    background: var(--secondary);
-    color: var(--back);
+    background: var(--blue);
+    color: var(--white);
     display: grid;
     gap: 1em;
     grid-auto-flow: column;
@@ -363,8 +386,7 @@ aside.subtitle {
     text-align: center;
 
     .contact-sponsor {
-      background: var(--dark-back);
-      border-radius: 1em;
+      background: var(--light-blue);
       margin: 2em auto;
       padding: 1em;
       width: 70%;
@@ -373,6 +395,11 @@ aside.subtitle {
         display: block;
         font-size: 3em;
         text-align: center;
+        transition: 0.3s;
+
+        &:hover {
+          filter: brightness(0.8);
+        }
       }
     }
   }
@@ -389,7 +416,7 @@ aside.subtitle {
     }
 
     dl {
-      background: var(--dark-back);
+      background: var(--blue);
       border-radius: 1em;
       display: flex;
       flex-direction: column;
@@ -426,7 +453,7 @@ aside.subtitle {
           text-decoration: inherit;
 
           &::before {
-            color: var(--main);
+            color: var(--green);
             content: "“";
             font-size: 4em;
             left: 0;
@@ -453,7 +480,7 @@ aside.subtitle {
 }
 
 #full-schedule {
-  background: var(--back);
+  background: var(--white);
   min-width: 65em;
   padding: 0.25em;
 
@@ -591,13 +618,13 @@ aside.subtitle {
       align-items: center;
       background: center / cover;
       border-radius: 0.1em;
-      color: var(--back);
+      color: var(--white);
       display: flex;
       font-size: 2em;
       font-weight: 600;
       justify-content: center;
       position: absolute;
-      text-shadow: 0 0 0.15em var(--text);
+      text-shadow: 0 0 0.15em var(--blue);
     }
   }
 
