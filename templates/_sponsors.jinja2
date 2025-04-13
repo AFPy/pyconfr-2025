@@ -1,5 +1,4 @@
 {% macro brochures(lang) %}
-  {#
   <ul class="buttons">
     {% if lang == 'fr' %}
       <li><a href="{{ url_for('static', filename='brochures/brochure_fr.pdf') }}">Brochure de sponsoring</a></li>
@@ -7,7 +6,6 @@
       <li><a href="{{ url_for('static', filename='brochures/brochure_en.pdf') }}">Sponsoring brochure</a></li>
     {% endif %}
   </ul>
-  #}
 {% endmacro %}
 
 {% macro description(company, lang) %}
