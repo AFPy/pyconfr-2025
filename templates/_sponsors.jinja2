@@ -114,7 +114,7 @@
       'Platine' if lang == 'fr' else 'Platinum': {
           'Campus René Cassin': 'https://www.campus-renecassin.com/',
           'IPI': 'https://www.ipi-ecoles.com/category/campus/lyon/',
-          'EPSI': 'https://www.epsi.fr/campus/lyon'
+          'EPSI': 'https://www.epsi.fr/campus/lyon',
       },
 
       'Or' if lang == 'fr' else 'Gold': {
@@ -131,10 +131,13 @@
 
       'Partenaires' if lang == 'fr' else 'Partners': {
           'Annabelle Nicvert': '',
+          'galae': 'https://galae.net',
+          'Gentils nuages': 'https://gentilsnuages.fr/',
+          'Octopuce': 'https://www.octopuce.fr/',
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce') %}
 
   {% if lang == 'fr' %}
     <p>
