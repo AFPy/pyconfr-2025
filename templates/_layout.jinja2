@@ -31,7 +31,7 @@
       <title>{{ title }} − PyConFR 2025</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:image" content="{{ url_for('static', filename='images/logo-full.svg') }}"/>
+      <meta property="og:image" content="{{ url_for('static', filename='images/logo-full.svg', _external=True) }}"/>
 
       <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}" />
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') | version }}">
