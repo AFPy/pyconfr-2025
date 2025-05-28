@@ -423,7 +423,7 @@ aside.subtitle {
     }
 
     dl {
-      background: var(--blue);
+      background: var(--light-blue);
       border-radius: 1em;
       display: flex;
       flex-direction: column;
@@ -431,13 +431,17 @@ aside.subtitle {
       width: 31%;
 
       img {
+        border-radius: 1em 1em 0 0;
         height: 20em;
         width: 100%;
       }
 
       dt {
+        /* remove these 2 lines when adding links */
+        font-size: 1.3em;
+        font-weight: bold;
         order: 2;
-        padding: 1em 2em;
+        padding: 1rem 2rem;
 
         a {
           color: inherit;
@@ -473,6 +477,23 @@ aside.subtitle {
         &:has(img) {
           order: 1;
           padding: 0;
+        }
+
+        /* remove this block when adding links */
+        &:last-of-type:not(:has(img)) {
+          padding: 1rem 0 2rem 3rem;
+          position: relative;
+
+          &::before {
+            color: var(--green);
+            content: "“";
+            font-size: 5em;
+            left: 1rem;
+            line-height: 1;
+            opacity: 0.3;
+            position: absolute;
+            top: -0.02em;
+          }
         }
       }
     }
@@ -795,6 +816,16 @@ aside.subtitle {
 
     .become-sponsor .contact-sponsor a {
       font-size: 1.5em;
+    }
+  }
+
+  #schedule {
+    .keynotes {
+      display: initial;
+
+      dl {
+        width: 100%;
+      }
     }
   }
 }
