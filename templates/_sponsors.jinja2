@@ -79,6 +79,10 @@
           solution est développée en Python, sur le cadriciel Django ; outils
           quasi exclusifs dès qu'il faut développer quelque chose à Entr'ouvert.
         </p>
+     {% elif company == 'Elastic' %}
+        <p>
+          Plus de 50 % des sociétés du Fortune 500 utilisent Elastic pour prendre des décisions plus intelligentes et innover plus rapidement grâce à la puissance de Search AI.<br/> Elastic — The Search AI Company, combine son expertise en matière de technologie de recherche et d'intelligence artificielle pour aider chaque utilisateur à transformer les données non structurées et sous-exploitées, dont la croissance est exponentielle, en réponses, actions et résultats.<br/> La Search AI Platform d'Elastic est à la base des deux solutions prêtes à l'emploi d'Elastic, Elastic Observability et Elastic Security, 
+        et constitue la plateforme de choix pour les développeurs qui souhaitent créer des applications et des services d'IA nouvelle génération.</p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -146,6 +150,10 @@
           tools when something needs to be written, be it a big software or a
           little script.
         </p>
+      {% elif company == 'Elastic' %}
+        <p>
+        More than 50% of the Fortune 500 uses Elastic to solve smarter and innovate faster with the power of Search AI. Elastic, the Search AI Company, integrates its expertise in search technology with artificial intelligence to help everyone transform the exponential growth of underutilized, unstructured data into answers, actions, and outcomes. Elastic's Search AI Platform is the foundation for Elastic’s two out-of-the-box solutions, Elastic Observability and Elastic Security, and is the platform of choice for developers seeking to build next-generation AI applications and services.
+        </p>
       {% endif %}
     {% endif %}
   </div>
@@ -161,6 +169,7 @@
       },
 
       'Or' if lang == 'fr' else 'Gold': {
+          'Elastic': 'https://www.elastic.co/',
       },
 
       'Argent' if lang == 'fr' else 'Silver': {
@@ -182,7 +191,7 @@
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic') %}
 
   {% if lang == 'fr' %}
     <p>
