@@ -84,16 +84,20 @@
           Plus de 50 % des sociétés du Fortune 500 utilisent Elastic pour prendre des décisions plus intelligentes et innover plus rapidement grâce à la puissance de Search AI.<br/> Elastic — The Search AI Company, combine son expertise en matière de technologie de recherche et d'intelligence artificielle pour aider chaque utilisateur à transformer les données non structurées et sous-exploitées, dont la croissance est exponentielle, en réponses, actions et résultats.<br/> La Search AI Platform d'Elastic est à la base des deux solutions prêtes à l'emploi d'Elastic, Elastic Observability et Elastic Security, 
         et constitue la plateforme de choix pour les développeurs qui souhaitent créer des applications et des services d'IA nouvelle génération.</p>
      {% elif company == 'Yaal Coop' %}
-     <p>Yaal Coop est une société coopérative d'intérêt collectif (SCIC)
-spécialisée dans le conseil, le développement et l'hébergement de
-services informatiques. La coopérative est située à Bordeaux et est
-composée de 5 personnes associées salariées, et 2 personnes salariées.
-Python est le langage de prédilection utilisé pour le développement de
-service web, scripts, logiciels libres et la plupart des projets de la
-coopérative.<br/>
-Yaal Coop prend soin de contribuer aux brique logicielles libres
-qu'elle emploie, par la correction de bugs, l'implémentation de
-fonctionnalités, ou la co-maintenance de certains projets.</p>
+        <p>Yaal Coop est une société coopérative d'intérêt collectif (SCIC)
+          spécialisée dans le conseil, le développement et l'hébergement de
+          services informatiques. La coopérative est située à Bordeaux et est
+          composée de 5 personnes associées salariées, et 2 personnes salariées.
+          Python est le langage de prédilection utilisé pour le développement de
+          service web, scripts, logiciels libres et la plupart des projets de la
+          coopérative.<br/>
+          Yaal Coop prend soin de contribuer aux brique logicielles libres
+          qu'elle emploie, par la correction de bugs, l'implémentation de
+          fonctionnalités, ou la co-maintenance de certains projets.</p>
+      {% elif company == 'Kraken' %}
+        <p>Fondée en 2017, Kraken Technologies développe un système d'exploitation révolutionnaire pour le secteur de l'énergie. Notre mission est de transformer la gestion des ressources énergétiques en optimisant la production d'énergie renouvelable et en améliorant l'efficacité des réseaux décentralisés. En 2020, nous avons étendu notre présence à l'international. Aujourd'hui, notre technologie est utilisée dans 17 pays, gérant plus de 54 millions de comptes clients et supervisant 42 GW d'énergie souscrite. En 2021, nous avons renforcé notre présence en Europe grâce à des collaborations stratégiques avec plusieurs grands fournisseurs d'énergie.</p>
+
+        <p>Notre plateforme flexible et adaptable permet aux entreprises de réduire leurs coûts tout en offrant une expérience client de haute qualité. Il vise à accompagner les acteurs du marché dans leur transition vers des modèles énergétiques plus durables et décarbonés. Chez Kraken, nous jouons un rôle clé dans la transformation du secteur énergétique mondial en fournissant des outils robustes et évolutifs adaptés aux défis actuels.</p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -171,7 +175,10 @@ fonctionnalités, ou la co-maintenance de certains projets.</p>
           The company is located in Bordeaux and has 5 salaried partners.
           Python is our favorite language to write web services, scripts, free software and almost every cooperative projects.
         </p>
+      {% elif company == 'Kraken' %}
+        <p>Founded in 2017, Kraken Technologies develops a revolutionary operating system for the energy sector. Our mission is to transform energy resource management by optimizing renewable energy production and improving the efficiency of decentralized networks. By 2020, we expanded our presence internationally. Today, our technology is used in 17 countries, managing over 54 million customer accounts and supervising 42 GW of contracted power. In 2021, we strengthened our presence in Europe through strategic collaborations with several major energy providers.</p>
 
+        <p>Our flexible and adaptable platform allows companies to reduce costs while delivering high-quality customer experiences. It is designed to support market players in their transition to more sustainable and decarbonized energy models. At Kraken, we play a key role in transforming the global energy sector by providing robust, scalable tools tailored to current challenges.</p>
       {% endif %}
     {% endif %}
   </div>
@@ -188,6 +195,7 @@ fonctionnalités, ou la co-maintenance de certains projets.</p>
 
       'Or' if lang == 'fr' else 'Gold': {
           'Elastic': 'https://www.elastic.co/',
+          'Kraken': 'https://kraken.tech',
       },
 
       'Argent' if lang == 'fr' else 'Silver': {
@@ -210,7 +218,7 @@ fonctionnalités, ou la co-maintenance de certains projets.</p>
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken') %}
 
   {% if lang == 'fr' %}
     <p>
