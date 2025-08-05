@@ -98,6 +98,29 @@
         <p>Fondée en 2017, Kraken Technologies développe un système d'exploitation révolutionnaire pour le secteur de l'énergie. Notre mission est de transformer la gestion des ressources énergétiques en optimisant la production d'énergie renouvelable et en améliorant l'efficacité des réseaux décentralisés. En 2020, nous avons étendu notre présence à l'international. Aujourd'hui, notre technologie est utilisée dans 17 pays, gérant plus de 54 millions de comptes clients et supervisant 42 GW d'énergie souscrite. En 2021, nous avons renforcé notre présence en Europe grâce à des collaborations stratégiques avec plusieurs grands fournisseurs d'énergie.</p>
 
         <p>Notre plateforme flexible et adaptable permet aux entreprises de réduire leurs coûts tout en offrant une expérience client de haute qualité. Il vise à accompagner les acteurs du marché dans leur transition vers des modèles énergétiques plus durables et décarbonés. Chez Kraken, nous jouons un rôle clé dans la transformation du secteur énergétique mondial en fournissant des outils robustes et évolutifs adaptés aux défis actuels.</p>
+      {% elif company == 'Kobalt' %}
+        <p>
+          Chez Kobalt, on fait du sur mesure, utile, solide et durable.
+          On ne multiplie pas les projets, on choisit ceux qui comptent, et on les mène avec engagement.
+        </p>
+        <p>
+          Comment on fait ?
+        </p>
+        <p>
+          Grâce à trois piliers :
+        </p>
+        <ol>
+          <li>Une équipe intransigeante sur la qualité et des clients qui nous font confiance</li>
+          <li>Des outils open source à la pointe et une communauté vivante</li>
+          <li>Des engagements environnementaux solides et l’éco-concetion au coeur de notre méthodo</li>
+        </ol>
+        <p>
+          On propose quoi ?
+        </p>
+        <p>
+          Un accompagnement sur-mesure pour votre projet.
+          De la conception à la maintenance de la solution, en passant par son développement et son hébergement.
+        </p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -179,6 +202,27 @@
         <p>Founded in 2017, Kraken Technologies develops a revolutionary operating system for the energy sector. Our mission is to transform energy resource management by optimizing renewable energy production and improving the efficiency of decentralized networks. By 2020, we expanded our presence internationally. Today, our technology is used in 17 countries, managing over 54 million customer accounts and supervising 42 GW of contracted power. In 2021, we strengthened our presence in Europe through strategic collaborations with several major energy providers.</p>
 
         <p>Our flexible and adaptable platform allows companies to reduce costs while delivering high-quality customer experiences. It is designed to support market players in their transition to more sustainable and decarbonized energy models. At Kraken, we play a key role in transforming the global energy sector by providing robust, scalable tools tailored to current challenges.</p>
+      {% elif company == 'Kobalt' %}
+        <p>
+          At Kobalt, we create customised, useful, robust and sustainable solutions. We don't take on multiple projects; we choose the ones that matter and carry them out with commitment.
+        </p>
+        <p>
+          How do we do it?
+        </p>
+        <p>
+          Thanks to three pillars:
+        </p>
+        <ol>
+          <li>A team that is uncompromising on quality and customers who trust us</li>
+          <li>Cutting-edge open source tools and a vibrant community</li>
+          <li>Solid environmental commitments and eco-design at the heart of our methodology</li>
+        </ol>
+        <p>
+          What do we offer?
+        </p>
+        <p>
+          Tailor-made support for your project. From design to maintenance of the solution, including its development and hosting.
+        </p>
       {% endif %}
     {% endif %}
   </div>
@@ -200,6 +244,7 @@
 
       'Argent' if lang == 'fr' else 'Silver': {
           'Entr\'ouvert': 'http://www.entrouvert.com/',
+          'Kobalt': 'https://www.kobalt.fr/',
       },
 
       'Bronze': {
@@ -207,7 +252,7 @@
       },
 
       'Cœur' if lang == 'fr' else 'Heart': {
-	'WeasyPrint': 'https://weasyprint.org/'
+	  'WeasyPrint': 'https://weasyprint.org/'
       },
 
       'Partenaires' if lang == 'fr' else 'Partners': {
@@ -218,7 +263,7 @@
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt') %}
 
   {% if lang == 'fr' %}
     <p>
