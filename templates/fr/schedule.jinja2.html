@@ -119,6 +119,7 @@
 
       <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
     </section>
+    #}
 
     <section id="register">
       <h3>Inscriptions</h3>
@@ -150,22 +151,16 @@
       </p>
       <ul>
         <li>pré-réserver des t-shirts (15 €), qui seront également vendus lors de la conférence mais en nombre limité,</li>
-        <li>vous inscrire pour le repas du samedi soir (30 €).</li>
+        <li>vous inscrire pour le repas du samedi soir (30 €),</li>
+        <li>d’inscrire des enfants à <a href="#children-area">l’espace enfants</a> du samedi et dimanche.</li>
       </ul>
       <p>
         ⚠️ La commande de t-shirts et réservation de la soirée du
         samedi soir entrainent des frais pour l’AFPy. <strong>Aucun
         remboursement ne sera possible après l’évènement.</strong>
       </p>
-      <p>
-        Les inscriptions à <a href="#children-area">l’espace enfants</a> sont ouvertes jusqu’à 15 jours avant le début de l’évènement, soit le <strong>14 octobre</strong>.
-      </p>
-      <ul class="buttons">
-        <li>
-          <a href="https://www.helloasso.com/associations/afpy/evenements/espace-enfants-a-la-pyconfr-2025">Inscriptions espace enfants</a>
-        </li>
-      </ul>
 
+      {#
       <p>
         Les inscriptions au <a href="{{ url_for('talks', lang=lang, category='lunch', _anchor='talk-MRHUVD') }}">déjeuner PyLadies</a> sont ouvertes jusqu’au <strong>27 octobre</strong>.
       </p>
@@ -175,6 +170,7 @@
           <a href="https://www.helloasso.com/associations/afpy/evenements/dejeuner-pyladies-a-la-pyconfr-2025">Inscriptions déjeuner PyLadies</a>
         </li>
       </ul>
+      #}
 
       <p>
         Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
@@ -190,42 +186,44 @@
       <h3>Espace enfants</h3>
 
       <p>
-        Un espace enfants est mis en place <strong>durant les quatre jours</strong> de la
-        PyConFR et est animé par <a href="https://www.babychou.com/">Babychou Services</a>.
+        Un espace enfants est mis en place gratuitement le <strong>samedi et dimanche</strong> de la
+        PyConFR et est animé par <a href="https://aujoyeuxbazar.com/">Au Joyeux Bazar de Claire</a>.
       </p>
       <p>
-        L’espace enfants accueille <strong>un maximum de 18 enfants, de 3 ans à 12 ans</strong>.
+        L’espace enfants accueille <strong>un maximum de 10 enfants, de 3 ans à 12 ans</strong>.
       </p>
       <p>
-        Les inscriptions seront ouvertes en même temps que les inscriptions pour
-        l’évènement et jusqu’à 15 jours avant le début de la PyConFR.
-        Une priorité est donnée aux personnes animant des sprints, conférences et ateliers.
+        Différents pôles d’activités sont proposées aux enfants : lecture, jeux de construction, jeux de société, dessins…
+      </p>
+      <p>
+        Les inscriptions sont <strong>à la demie-journée</strong> et se font sur <a href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2025">la billeterie de l’évènement</a> :
+      </p>
+      <ul>
+        <li>samedi :de 8h45 à 12h30 et de 14h à 18h,</li>
+        <li>dimanche : de 8h45 à 12h30 et de 14h à 17h.</li>
+      </ul>
+      <p>
+        ⚠️ <strong>Les repas sont à la charge des parents.</strong>
       </p>
     </section>
 
     <section id="dinner">
       <h3>Repas du samedi soir</h3>
       <p>
-        Un repas est organisé le samedi soir, de 19 h 30 à 23 h 00, au <a href="https://www.letigre.eu/le-petit-tigre/presentation">Petit Tigre</a>
-        (5 Rue du Faubourg-National, Strasbourg),
-        uniquement pour les personnes ayant réservé lors de leur inscription.
+        Un repas est organisé le samedi soir de 19 h 30 à 23 h 00.
+        La salle se situe à La Cordée Valmy, 6 place Dumas de Loire, 69009 Lyon.
       </p>
       <p>
-        Ce repas comprend un cocktail dînatoire comprenant :
+        Le repas est accessible uniquement aux personnes ayant réservé lors de leur inscription.
       </p>
-      <ul>
-        <li>Planches mixte charcuterie / fromages,</li>
-        <li>Crudités,</li>
-        <li>Salade de quinoa,</li>
-        <li>Wok de légumes et steaks de soja,</li>
-        <li>Tartes flambées salées et sucrées,</li>
-        <li>Deux verres (bière, vin, boisson sans alcool, café, infusion).</li>
-      </ul>
+      <p>
+        Pour le repas, nous faisons appel à un traiteur. Le menu sera bientôt disponible,
+        et comporte des options végétariennes et végans.
+      </p>
       <p>
         L’achat d’autres boissons alcoolisées (non comprises dans le prix) est possible
         lors du repas.
       </p>
     </section>
-    #}
   </article>
 {% endblock content %}
