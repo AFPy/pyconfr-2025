@@ -532,7 +532,7 @@ aside.subtitle {
 #full-schedule {
   background: var(--white);
   min-width: 65em;
-  padding: 0.25em;
+  padding: 0;
 
   table {
     border-collapse: separate;
@@ -859,12 +859,17 @@ aside.subtitle {
 
 @media print {
   @page {
-    margin: 1.35cm 1.5cm;
+    margin: 0.8cm;
     size: A4 landscape;
   }
 
   #full-schedule {
     background: none;
+    min-width: 0;
+
+    header {
+      display: none;
+    }
 
     table {
       border-spacing: 0;
@@ -876,7 +881,7 @@ aside.subtitle {
         top: 0;
 
         th:not(:empty) {
-          background: #1b0e29;
+          background: var(--blue);
         }
 
         &.rooms tr > :first-child::before {
@@ -887,31 +892,33 @@ aside.subtitle {
           padding-bottom: 0;
           transform: translate(0 -4em);
         }
+
+        &.day ~ thead.day {
+          break-before: page;
+        }
       }
 
       tr:not(:last-child) {
         height: 6em;
       }
 
-      tr:has(#sunday-lunch) + tr {
-        height: 0 !important;
-      }
-
       td {
-        border-bottom: 1px solid white;
-        border-right: 1px solid white;
-        border-top: 1px solid white;
         line-height: 1.15;
         padding: 0.5em 0.5em 2.5em 0.5em;
+
+        &:not(:empty) {
+          outline: 0.1mm solid var(--light-blue);
+        }
       }
 
       div {
-        background: none !important;
-        color: inherit;
         height: 4em !important;
         justify-content: flex-start;
-        padding-left: 0.25em;
-        width: 100%;
+        width: 400%;
+
+        #saturday-lunch &, #sunday-lunch & {
+          height: 8em !important;
+        }
       }
     }
   }
