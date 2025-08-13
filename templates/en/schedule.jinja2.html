@@ -117,6 +117,7 @@
 
       <iframe src="{{ url_for('schedule', lang=lang) }}" loading="lazy"></iframe>
     </section>
+    #}
 
     <section id="register">
       <h3>Registration</h3>
@@ -145,23 +146,16 @@
       </p>
       <ul>
         <li>reserve t-shirts (€15), also sold during the event with limited stocks,</li>
-        <li>reserve a place for the Saturday night dinner (€30).</li>
+        <li>reserve a place for the Saturday night dinner (€30),</li>
+        <li>register children to <a href="#children-area">the Chidren Area</a> on Saturday and Sunday.</li>
       </ul>
       <p>
         ⚠️ Ordering t-shirts and booking the Saturday evening party
         will incur a fee for AFPy. <strong>No refunds will be possible after
         the event.</strong>
       </p>
-      <p>
-        Registration for <a href="#children-area">the children's area</a> is open until 15 days
-        before the start of the event, i.e. <strong>October 14<sup>th</sup></strong>.
-      </p>
-      <ul class="buttons">
-        <li>
-          <a href="https://www.helloasso.com/associations/afpy/evenements/espace-enfants-a-la-pyconfr-2025">Children Area Registration</a>
-        </li>
-      </ul>
 
+      {#
       <p>
         Registration for the <a href="{{ url_for('talks', lang=lang, category='lunch', _anchor='talk-MRHUVD') }}">PyLadies Lunch</a> is open until <strong>October 27th</strong>.
       </p>
@@ -170,6 +164,7 @@
           <a href="https://www.helloasso.com/associations/afpy/evenements/dejeuner-pyladies-a-la-pyconfr-2025">PyLadies Lunch Registration</a>
         </li>
       </ul>
+      #}
 
       <p>
         You can also support <a href="https://afpy.org/">AFPy</a>, the
@@ -179,7 +174,6 @@
         must <a href="https://www.afpy.org/adherer">become a member</a>.
       </p>
     </section>
-    #}
 
     <section id="children-area">
       <h3>Children's Area</h3>
@@ -194,41 +188,34 @@
         Various activities are available for children, including reading, building games, board games, drawing…
       </p>
       <p>
-        Registration is on a <strong>half-day basis</strong> and can be done on the event registration page:
+        Registration is on a <strong>half-day basis</strong> and can be done on <a href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2025">the event registration page</a>:
       </p>
       <ul>
         <li>Saturday: 8:45 AM to 12:30 PM and 2 PM to 6 PM</li>
         <li>Sunday: 8:45 AM to 12:30 PM and 2 PM to 5 PM</li>
       </ul>
       <p>
-        <strong>Meals are the responsibility of parents.</strong>
+        ⚠️ <strong>Meals are the responsibility of parents.</strong>
       </p>
     </section>
 
-    {#
     <section id="dinner">
       <h3>Saturday night dinner</h3>
       <p>
-        A dinner is organized on Saturday night, from 7:30 PM to 11:00 PM,
-        at <a href="https://www.letigre.eu/le-petit-tigre/presentation">Petit Tigre</a> (5 Rue du Faubourg-National, Strasbourg),
-        only for the ones who chose the option during their registration.
+        A dinner is organized on Saturday night, from 7:30 PM to 11:00 PM.
+        The place is located at La Cordée Valmy, 6 place Dumas de Loire, 69009 Lyon.
       </p>
       <p>
-        This dinner includes a cocktail buffet with:
+        The dinner is accesible only for the ones who chose the option during their registration.
       </p>
-      <ul>
-        <li>Mixed charcuterie/cheese boards,</li>
-        <li>Crudités,</li>
-        <li>Quinoa salad,</li>
-        <li>Vegetable wok and soy steaks,</li>
-        <li>Savory and sweet flambé tarts,</li>
-        <li>Two drinks (beer, wine, non-alcoholic drink, coffee, herbal tea).</li>
-      </ul>
+      <p>
+        For the dinner, we’re using a caterer. The menu will be available soon,
+        and includes vegetarian and vegan options.
+      </p>
       <p>
         Other alcoholic drinks can be bought (not included in the price) during the
         dinner.
       </p>
     </section>
-    #}
   </article>
 {% endblock content %}
