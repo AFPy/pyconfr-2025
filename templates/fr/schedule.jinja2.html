@@ -29,13 +29,11 @@
         </ul>
         #}
 
-        {#
         <ul class="buttons">
           <li>
             <a href="{{ url_for('talks', lang=lang, category='sprint') }}">Voir la liste des sprints</a>
           </li>
         </ul>
-        #}
       </section>
 
       <section>
@@ -59,13 +57,11 @@
         </ul>
         #}
 
-        {#
         <ul class="buttons">
           <li>
             <a href="#calendar">Voir le programme</a>
           </li>
         </ul>
-        #}
       </section>
     </section>
 
@@ -95,8 +91,7 @@
       #}
     </section>
 
-    {#
-    <section class="calendar">
+    <section id="calendar">
       <h3>Calendrier</h3>
       <p>
         Le calendrier est disponible ci-dessous,
@@ -119,7 +114,6 @@
 
       <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
     </section>
-    #}
 
     <section id="register">
       <h3>Inscriptions</h3>

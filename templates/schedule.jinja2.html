@@ -39,15 +39,15 @@
                   {% for i in range(rowspan - 1) %}
                     {{ rowspans.append(room.id) or '' }}
                   {% endfor %}
-                  <td rowspan="{{ rowspan }}" class="submission {{ talk.submission_type.en | slug }}">
-                    <a href="{{ url_for('talks', category=talk.submission_type.en | slug, lang=lang, _anchor='talk-' + talk.code) }}" target="_parent">
+                  <td rowspan="{{ rowspan }}" class="submission {{ talk.submission_type.name.en | slug }}">
+                    <a href="{{ url_for('talks', category=talk.submission_type.name.en | slug, lang=lang, _anchor='talk-' + talk.code) }}" target="_parent">
                       {{ talk.title }}
                     </a>
                     <aside class="type">
-                      {{ talk.submission_type[lang] }}<br>
+                      {{ talk.submission_type.name[lang] }}<br>
                       {{ talk.duration | format_duration }} |
-                      {% if talk.submission_type.en | slug != 'lightning-talks' %}{{ talk.content_locale }}{% endif %}
-                      {% if talk.answers and talk.submission_type.en %}|{% endif %}
+                      {% if talk.submission_type.name.en | slug != 'lightning-talks' %}{{ talk.content_locale }}{% endif %}
+                      {% if talk.answers and talk.submission_type.name.en %}|{% endif %}
                       {% if talk.answers %}{{ talk.answers[0].options[0].answer[lang] | lower }}{% endif %}
                     </aside>
                     <aside class="speakers">

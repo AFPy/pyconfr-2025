@@ -5,14 +5,16 @@ PRODID:-//PyConFR//NONSGML PyConFR//{{ lang | upper }}
 {%- for day, hours in schedule.schedule.items() -%}
   {%- for minutes, talks in hours.items() -%}
     {%- for talk in talks.values() %}
+      {%- for slot in talk.slots %}
 BEGIN:VEVENT
 UID:{{ talk.code }}
-DTSTART:{{ talk.slot.start | ical_datetime }}
-DTEND:{{ talk.slot.end | ical_datetime }}
+DTSTART:{{ slot.start | ical_datetime }}
+DTEND:{{ slot.end | ical_datetime }}
 SUMMARY:{{ talk.title | ical_text }} ({{ talk.speakers | map(attribute="name") | join(", ") }})
 DESCRIPTION:{{ talk.description | ical_text }}
-LOCATION:{{ talk.slot.room[lang] }}
+LOCATION:{{ slot.room.name[lang] }}
 END:VEVENT
+      {%- endfor -%}
     {%- endfor -%}
   {%- endfor -%}
 {%- endfor %}

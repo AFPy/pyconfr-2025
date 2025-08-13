@@ -4,9 +4,9 @@
   {{ super() }}
   <nav>
     <ul id="categories">
-      {% for slug, title in categories.items() %}
-        <li class="{{ 'active' if category == slug }}">
-          <a href="{{ url_for('talks', lang=lang, category=slug) }}">{{ title[lang] }}</a>
+      {% for category_item_slug, category_item in categories.items() %}
+        <li class="{{ 'active' if category == category_item_slug }}">
+          <a href="{{ url_for('talks', lang=lang, category=category_item_slug) }}">{{ category_item.name[lang] }}</a>
         </li>
       {% endfor %}
     </ul>
@@ -15,7 +15,7 @@
 
 {% block content %}
   <article>
-    <h2>{{ categories[category][lang] }}</h2>
+    <h2>{{ categories[category].name[lang] }}</h2>
     {% if category == 'sprint' %}
       <p>
         The list and schedules of the sprints are defined. For the latest organizational details, consult the people at the front desk or the nearby signage.
@@ -30,15 +30,15 @@
     {% for day, hours in talks.items() %}
       {% for minutes, slots in hours.items() %}
         {% for talk in slots.values() %}
-          {% if talk.submission_type.en | slug == category %}
+          {% if talk.submission_type.name.en | slug == category %}
             <section>
               <h3 id="talk-{{ talk.code }}">
-                <a href="#talk-{{ talk.code }}">{{ talk.title }}</a>
+                {{ talk.title }}
               </h3>
               <p>
                 {% for speaker in talk.speakers %}
-                  {% if speaker.avatar %}
-                    <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
+                  {% if speaker.avatar_url %}
+                    <img class="avatar" src="{{ speaker.avatar_url }}" loading="lazy">
                   {% endif %}
                   {{ speaker.name }}{{ "," if not loop.last }}
                 {% endfor %}
@@ -48,7 +48,7 @@
                   {% if category == 'sprint' %}
                     Thursday and Friday fro 10:00 AM to 5:00 PM
                   {% else %}
-                    Room {{ talk.slot.room[lang] }}
+                    Room {{ talk.slots[0].room.name[lang] }}
                     − {{ day | format_day(lang) }} at {{ minutes | format_minutes(lang) }}
                     − {{ talk.duration | format_duration }}
                   {% endif %}

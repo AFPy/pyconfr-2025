@@ -40,8 +40,8 @@
   </head>
 
   <body id="{{ page_name }}">
-    {% block header %}
-      <header>
+    <header>
+      {% block header %}
         <h1><a href="{{ url_for('page', lang=lang) }}">PyConFR 2025</a></h1>
 
         <nav aria-label="{{ nav_label }}">
@@ -77,15 +77,15 @@
             </li>
           </ul>
         </nav>
-      </header>
-    {% endblock header %}
+      {% endblock header %}
+    </header>
 
     <main>
       {% block content %}{% endblock content %}
     </main>
 
-    {% block footer %}
-      <footer>
+    <footer>
+      {% block footer %}
         <nav aria-label="{{ footer_label }}">
           <ul>
             <li><a href="mailto:contact@pycon.fr">Email</a></li>
@@ -97,7 +97,7 @@
             <li><a href="https://afpy.org/">© 2025 AFPy</a></li>
           </ul>
         </nav>
-      </footer>
-    {% endblock footer %}
+      {% endblock footer %}
+    </footer>
   </body>
 </html>
