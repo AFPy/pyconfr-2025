@@ -165,8 +165,19 @@
                 Wagon).
         </p>
         <p>
-            Scalingo est plus qu’un hébergeur : un partenaire de confiance pour un
-            numérique simple, souverain et sécurisé.
+          Scalingo est plus qu’un hébergeur : un partenaire de confiance pour un
+          numérique simple, souverain et sécurisé.
+        </p>
+      {% elif company == 'itaverne' %}
+        <p>
+          Nous sommes spécialisés dans le développement web avec une forte expertise en python.
+          Nous accompagnons les clients sur des POCs (réalisation rapide d'une idée en cas logiciel pour
+          vérifier son bon fonctionnement) ou MVP (réalisation d'application pour vérifier la mise sur le marché de l'idée du client),
+          de l'accompagnement technique pour aider les équipes de nos clients à être plus efficace,
+          du mentoring technique afin de résoudre des problématiques techniques…
+        </p>
+        <p>
+          Avec 18 ans d'expérience, nos compétences sont larges et nous permettent de répondre à une grande diversité de projets.
         </p>
       {% endif %}
     {% elif lang == 'en' %}
@@ -310,8 +321,18 @@
             Interior, Engie, Yespark, Pix, Ingenico Group, and Le Wagon.
         </p>
         <p>
-            Scalingo is more than a host: it’s a trusted partner for a simple,
-            sovereign, secure digital future.
+          Scalingo is more than a host: it’s a trusted partner for a simple,
+          sovereign, secure digital future.
+        </p>
+      {% elif company == 'itaverne' %}
+        <p>
+          We specialise in web development with strong expertise in Python. We support clients with POCs
+          (rapid implementation of an idea in software to verify its proper functioning) or MVPs
+          (application development to verify the marketability of the client's idea), technical support to
+          help our clients' teams be more efficient, technical mentoring to resolve technical issues, and more.
+        </p>
+        <p>
+          With 18 years of experience, we have a wide range of skills that enable us to take on a wide variety of projects.
         </p>
       {% endif %}
     {% endif %}
@@ -341,13 +362,14 @@
 
       'Bronze': {
           'Yaal Coop': 'https://yaal.coop/',
+          'itaverne': 'https://itarverne.fr/',
       },
 
-      'Cœur' if lang == 'fr' else 'Heart': {
+          'Cœur' if lang == 'fr' else 'Heart': {
 	  'WeasyPrint': 'https://weasyprint.org/'
       },
 
-      'Partenaires' if lang == 'fr' else 'Partners': {
+          'Partenaires' if lang == 'fr' else 'Partners': {
           'Annabelle Nicvert': 'https://www.linkedin.com/in/annabelle-nicvert-158127373/',
           'galae': 'https://galae.net',
           'Gentils nuages': 'https://gentilsnuages.fr/',
@@ -355,7 +377,7 @@
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itaverne') %}
 
   {% if lang == 'fr' %}
     <p>
