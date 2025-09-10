@@ -81,7 +81,7 @@
         </p>
      {% elif company == 'Elastic' %}
         <p>
-          Plus de 50 % des sociétés du Fortune 500 utilisent Elastic pour prendre des décisions plus intelligentes et innover plus rapidement grâce à la puissance de Search AI.<br/> Elastic — The Search AI Company, combine son expertise en matière de technologie de recherche et d'intelligence artificielle pour aider chaque utilisateur à transformer les données non structurées et sous-exploitées, dont la croissance est exponentielle, en réponses, actions et résultats.<br/> La Search AI Platform d'Elastic est à la base des deux solutions prêtes à l'emploi d'Elastic, Elastic Observability et Elastic Security, 
+          Plus de 50 % des sociétés du Fortune 500 utilisent Elastic pour prendre des décisions plus intelligentes et innover plus rapidement grâce à la puissance de Search AI.<br/> Elastic — The Search AI Company, combine son expertise en matière de technologie de recherche et d'intelligence artificielle pour aider chaque utilisateur à transformer les données non structurées et sous-exploitées, dont la croissance est exponentielle, en réponses, actions et résultats.<br/> La Search AI Platform d'Elastic est à la base des deux solutions prêtes à l'emploi d'Elastic, Elastic Observability et Elastic Security,
         et constitue la plateforme de choix pour les développeurs qui souhaitent créer des applications et des services d'IA nouvelle génération.</p>
      {% elif company == 'Yaal Coop' %}
         <p>Yaal Coop est une société coopérative d'intérêt collectif (SCIC)
@@ -136,6 +136,37 @@
           à la promotion de l'utilisation du langage de programmation
           Python en Europe et à l'organisation d'événements centrés
           sur le langage de programmation Python pour y parvenir.
+        </p>
+        {% elif company == 'Scalingo' %}
+        <p>
+            Scalingo est une plateforme française en tant que service (PaaS) dédiée
+            à l’hébergement cloud souverain. Elle permet aux entreprises et
+            institutions de déployer, gérer et faire évoluer facilement leurs
+            applications web et bases de données dans un environnement sécurisé et
+            conforme aux réglementations européennes.
+        </p>
+        <p>
+            Pensée pour les développeurs et DSI, Scalingo automatise la gestion de
+            l’infrastructure (scalabilité, sécurité, supervision, sauvegardes, mises
+                    à jour...), afin de se concentrer sur l’essentiel : le produit. Les
+            déploiements se font en quelques clics ou via CI/CD, sans expertise
+            DevOps requise.
+        </p>
+        <p>
+            Les données sont hébergées exclusivement en France sur l’infrastructure
+            souveraine de 3DS Outscale, qualifiée SecNumCloud 3.2. Scalingo est
+            certifiée ISO 27001, HDS (Hébergement de Données de Santé) et engagée
+            dans sa propre qualification SecNumCloud.
+        </p>
+        <p>
+            Plus de 1000 clients nous font confiance : institutions publiques,
+            collectivités, agences digitales, startups et grands comptes (ex. :
+                Ministère de l’Intérieur, Engie, Yespark, Pix, Ingenico Group, Le
+                Wagon).
+        </p>
+        <p>
+            Scalingo est plus qu’un hébergeur : un partenaire de confiance pour un
+            numérique simple, souverain et sécurisé.
         </p>
       {% endif %}
     {% elif lang == 'en' %}
@@ -254,6 +285,34 @@
           and organize events centered around the programming language
           Python to support this.
         </p>
+        {% elif company == 'Scalingo' %}
+        <p>
+            Scalingo is a French Platform-as-a-Service (PaaS) for sovereign cloud
+            hosting. It enables companies and institutions to deploy, manage, and
+            scale web applications and databases in a secure, stable, and
+            regulation-compliant environment.
+        </p>
+        <p>
+            Designed for developers and IT teams, Scalingo automates infrastructure
+            management (scalability, security, monitoring, backups, updates…),
+            allowing teams to focus on their product. Deployments happen in a few
+            clicks or via CI/CD, with no DevOps expertise required.
+        </p>
+        <p>
+            All data is hosted in France on 3DS Outscale’s sovereign infrastructure,
+            SecNumCloud 3.2 qualified by ANSSI. Scalingo is ISO 27001 and HDS
+            (Health Data Hosting) certified, and is pursuing its own SecNumCloud
+            qualification.
+        </p>
+        <p>
+            Over 1000 clients trust us: public institutions, local governments,
+            agencies, startups, and large enterprises such as the Ministry of the
+            Interior, Engie, Yespark, Pix, Ingenico Group, and Le Wagon.
+        </p>
+        <p>
+            Scalingo is more than a host: it’s a trusted partner for a simple,
+            sovereign, secure digital future.
+        </p>
       {% endif %}
     {% endif %}
   </div>
@@ -272,6 +331,7 @@
       'Or' if lang == 'fr' else 'Gold': {
           'Elastic': 'https://www.elastic.co/',
           'Kraken': 'https://kraken.tech',
+          'Scalingo': 'https://scalingo.com',
       },
 
       'Argent' if lang == 'fr' else 'Silver': {
