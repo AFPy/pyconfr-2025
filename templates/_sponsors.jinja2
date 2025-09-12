@@ -179,6 +179,27 @@
         <p>
           Avec 18 ans d'expérience, nos compétences sont larges et nous permettent de répondre à une grande diversité de projets.
         </p>
+      {% elif company == 'April' %}
+        <p>
+          APRIL est le créateur et le leader du courtage grossiste en assurance avec un réseau de plus de
+          15 000 courtiers partenaires en France et 17 000 dans le monde. Le groupe est un acteur reconnu en
+          France, en Europe, en Asie et en Amérique du Nord pour son savoir-faire en santé et prévoyance des
+          particuliers, professionnels et TPE, en assurance des emprunteurs, en santé internationale, en dommages
+          de niches et en gestion de patrimoine. En 2024, APRIL a enregistré en 2024 un chiffre d’affaires de 860M€.
+        </p>
+        <p>
+          Au quotidien, les 3 000 collaborateurs d’APRIL dessinent le futur de l’assurance en proposant à ses clients
+          et partenaires une expérience remarquable alliant le meilleur des relations humaines et de la technologie.
+        </p>
+        <p>
+          Au sein du groupe, les équipes data suivent une roadmap ambitieuse en matière de performance opérationnelle,
+          d’amélioration de l’expérience client, de soutien à la distribution intermédiée et directe, et contribue
+          également aux expérimentations menées sur l’intelligence artificielle.
+        </p>
+        <p>
+          L’ambition est pouvoir réaliser dans les deux prochaines années une vingtaine de cas d’usages, de plus en
+          plus orientés sur des analyses prédictives et probabilistes, nécessitant une utilisation généralisée du langage Python.
+        </p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -334,6 +355,27 @@
         <p>
           With 18 years of experience, we have a wide range of skills that enable us to take on a wide variety of projects.
         </p>
+      {% elif company == 'April' %}
+        <p>
+          APRIL is the creator and leader in wholesale insurance brokerage, with a network of over
+          15,000 partner brokers in France and 17,000 worldwide. The group is recognised in France,
+          Europe, Asia and North America for its expertise in health and personal protection insurance
+          for individuals, professionals and small businesses, loan insurance, international health insurance,
+          niche damage insurance and wealth management. In 2024, APRIL recorded a turnover of €860 million.
+        </p>
+        <p>
+          Every day, APRIL's 3,000 employees shape the future of insurance by offering its customers and
+          partners a remarkable experience that combines the best of human relations and technology.
+        </p>
+        <p>
+          Within the group, the data teams are following an ambitious roadmap in terms of operational performance,
+          improving the customer experience, supporting intermediary and direct distribution, and also contributing
+          to experiments in artificial intelligence.
+        </p>
+        <p>
+          The ambition is to be able to implement around twenty use cases over the next two years, increasingly
+          focused on predictive and probabilistic analyses, requiring widespread use of the Python language.
+        </p>
       {% endif %}
     {% endif %}
   </div>
@@ -350,12 +392,13 @@
       },
 
       'Or' if lang == 'fr' else 'Gold': {
+          'April': 'https://www.april.com/',
           'Elastic': 'https://www.elastic.co/',
           'Kraken': 'https://kraken.tech',
           'Scalingo': 'https://scalingo.com',
       },
 
-      'Argent' if lang == 'fr' else 'Silver': {
+          'Argent' if lang == 'fr' else 'Silver': {
           'Entr\'ouvert': 'http://www.entrouvert.com/',
           'Kobalt': 'https://www.kobalt.fr/',
       },
@@ -379,7 +422,7 @@
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itaverne', 'Galactée', 'LeBureau') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itaverne', 'Galactée', 'LeBureau', 'April') %}
 
   {% if lang == 'fr' %}
     <p>
