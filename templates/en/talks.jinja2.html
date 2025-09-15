@@ -33,7 +33,7 @@
           {% if talk.submission_type.name.en | slug == category %}
             <section>
               <h3 id="talk-{{ talk.code }}">
-                {{ talk.title }}
+                {{ talk.title | markdown | safe }}
               </h3>
               <p>
                 {% for speaker in talk.speakers %}

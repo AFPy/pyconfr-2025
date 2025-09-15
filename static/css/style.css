@@ -172,6 +172,11 @@ sup {
   vertical-align: 30%;
 }
 
+pre,
+code {
+  font-family: JetBrains;
+}
+
 iframe {
   border: 0;
 }

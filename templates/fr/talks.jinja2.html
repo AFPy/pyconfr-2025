@@ -18,7 +18,7 @@
     <h2>{{ categories[category].name[lang] }}</h2>
     {% if category == 'sprint' %}
       <p>
-        La liste et les horaires des sprints sont définies. Pour les derniers détails d'organisation, consultez les personnes à l'accueil ou l'affichage proche.
+        La liste et les horaires des sprints sont définis. Pour les derniers détails d'organisation, consultez les personnes à l'accueil ou l'affichage proche.
       </p>
     {% endif %}
 
@@ -33,7 +33,7 @@
           {% if talk.submission_type.name.en | slug == category %}
             <section>
               <h3 id="talk-{{ talk.code }}">
-                {{ talk.title }}
+                {{ talk.title | markdown | safe }}
               </h3>
               <p>
                 {% for speaker in talk.speakers %}
