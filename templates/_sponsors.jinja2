@@ -200,6 +200,16 @@
           L’ambition est pouvoir réaliser dans les deux prochaines années une vingtaine de cas d’usages, de plus en
           plus orientés sur des analyses prédictives et probabilistes, nécessitant une utilisation généralisée du langage Python.
         </p>
+      {% elif company == 'Navicat' %}
+      <p>
+      <strong>Navicat est la solution tout-en-un qui simplifie et accélère la gestion de vos bases de données.</strong>Grâce à une interface intuitive et des fonctionnalités puissantes, vous administrez facilement MySQL, PostgreSQL, Oracle, SQL Server, MariaDB, SQLite, MongoDB, Redis, SQLite ou Snowflake depuis un seul outil. Sauvegardes, synchronisation, automatisation et visualisation deviennent rapides et fiables.
+        </p>
+      <p>
+        Conçu pour les développeurs, DBA et analystes, Navicat optimise la productivité tout en garantissant sécurité et stabilité. Avec Navicat Cloud et On-Premise, vos équipes collaborent en toute fluidité, où qu’elles soient.
+      </p>
+      <p>
+        Édité par <strong>PremiumSoft CyberTech Ltd</strong>, société pionnière basée à Singapour depuis plus de 20 ans, Navicat est adopté par des milliers d’entreprises dans le monde. <strong>Notre mission : transformer la complexité des bases de données en une expérience simple, performante et collaborative.</strong>
+      </p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -376,6 +386,20 @@
           The ambition is to be able to implement around twenty use cases over the next two years, increasingly
           focused on predictive and probabilistic analyses, requiring widespread use of the Python language.
         </p>
+      {% elif company == 'Navicat' %}
+        <p>
+        <strong>Navicat is the all-in-one solution that simplifies and accelerates your database management.</strong>
+With an intuitive interface and powerful features, you can easily manage MySQL, PostgreSQL, Oracle, SQL Server, MariaDB, SQLite, MongoDB, Redis, SQLite, or Snowflake — all from a single tool. Backups, synchronization, automation, and visualization become fast and reliable.
+        </p>
+        <p>
+        Designed for developers, DBAs, and analysts, Navicat boosts productivity while ensuring security and stability.
+        With Navicat Cloud and On-Premise, your teams can collaborate seamlessly, no matter where they are.
+        </p>
+        <p>
+        Developed by <strong>PremiumSoft CyberTech Ltd</strong>, a pioneering company based in Singapore for over 20 years, Navicat is trusted by thousands of businesses worldwide.
+        <strong>Our mission: to turn database complexity into a simple, efficient, and collaborative experience.</strong>
+        </p>
+
       {% endif %}
     {% endif %}
   </div>
@@ -396,6 +420,7 @@
           'Elastic': 'https://www.elastic.co/',
           'Kraken': 'https://kraken.tech',
           'Scalingo': 'https://scalingo.com',
+          'Navicat': 'https://www.navicat.fr/'
       },
 
           'Argent' if lang == 'fr' else 'Silver': {
@@ -422,7 +447,7 @@
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itaverne', 'Galactée', 'LeBureau', 'April') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itaverne', 'Galactée', 'LeBureau', 'April', 'Navicat') %}
 
   {% if lang == 'fr' %}
     <p>
