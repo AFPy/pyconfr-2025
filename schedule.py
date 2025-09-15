@@ -84,8 +84,12 @@ def to_time(minutes):
 
 def clean_talk(talk):
     """Remove non-public data from talks"""
-    for key in ("do_not_record", "notes", "internal_notes"):
-        del talk[key]
+    to_remove = ("do_not_record", "notes", "internal_notes",
+                 "review_code", "invitation_token", "reviews",
+                 "median_score", "mean_score")
+    for key in to_remove:
+        if key in talk:
+            del talk[key]
 
 
 # Check constants consistency.
