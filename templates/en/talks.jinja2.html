@@ -23,11 +23,11 @@
     {% endif %}
 
     {% if category == 'sprint' %}
-      {% set talks = schedule.sprints %}
+      {% set talks = [schedule.sprints.items() | first] %}
     {% else %}
-      {% set talks = schedule.schedule %}
+      {% set talks = schedule.schedule.items() %}
     {% endif %}
-    {% for day, hours in talks.items() %}
+    {% for day, hours in talks %}
       {% for minutes, slots in hours.items() %}
         {% for talk in slots.values() %}
           {% if talk.submission_type.name.en | slug == category %}
