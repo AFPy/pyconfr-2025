@@ -210,6 +210,12 @@
       <p>
         Édité par <strong>PremiumSoft CyberTech Ltd</strong>, société pionnière basée à Singapour depuis plus de 20 ans, Navicat est adopté par des milliers d’entreprises dans le monde. <strong>Notre mission : transformer la complexité des bases de données en une expérience simple, performante et collaborative.</strong>
       </p>
+      {% elif company == 'Alma' %}
+        <p>Alma est une retailtech et fintech fondée en 2018. Nous proposons des solutions de paiement flexibles pour les boutiques physiques et en ligne,
+        avec le paiement en 2, 3 ou 4 fois et en différé. Notre solution de paiement s’applique également aux particuliers avec l’app et la carte Alma.
+        Nous priorisons l’expérience et la satisfaction de nos clients avec des outils simples et agréables à utiliser.
+        Présents dans une dizaine de pays européens, nous travaillons avec plus de 7500 grandes marques comme Sncf,
+        Maisons du Monde, Nature & Découvertes, Etam, Printemps, Afflelou, Emma, Perfectstay…</p>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -399,7 +405,8 @@ With an intuitive interface and powerful features, you can easily manage MySQL, 
         Developed by <strong>PremiumSoft CyberTech Ltd</strong>, a pioneering company based in Singapore for over 20 years, Navicat is trusted by thousands of businesses worldwide.
         <strong>Our mission: to turn database complexity into a simple, efficient, and collaborative experience.</strong>
         </p>
-
+      {% elif company == 'Alma' %}
+        <p>Alma is a fintech founded in 2018. We offer flexible payment solutions for physical and online stores, with deferred payment and 2, 3, or 4 installments. We also help consumers stay in control of their budget with the Alma app and card. We prioritize the experience and satisfaction of our customers with simple and pleasant to use tools. We operate in ten European countries and work with more than 7500 major brands such as Maisons du Monde, Nature et Découvertes, Etam, Le Slip Français, Jacquemus, Maje…</p>
       {% endif %}
     {% endif %}
   </div>
@@ -423,9 +430,10 @@ With an intuitive interface and powerful features, you can easily manage MySQL, 
           'Navicat': 'https://www.navicat.fr/'
       },
 
-          'Argent' if lang == 'fr' else 'Silver': {
+      'Argent' if lang == 'fr' else 'Silver': {
           'Entr\'ouvert': 'http://www.entrouvert.com/',
           'Kobalt': 'https://www.kobalt.fr/',
+          'Alma': 'https://almapay.com/',
       },
 
       'Bronze': {
