@@ -23,7 +23,7 @@ def slug(string):
 
 
 TALK_CATEGORIES = {
-    slug(talk['submission_type']['en']): talk['submission_type']
+    slug(talk['submission_type']['name']['en']): talk['submission_type']
     for dates in
     tuple(SCHEDULE['schedule'].values()) + tuple(SCHEDULE['sprints'].values())
     for hours in dates.values()
@@ -83,7 +83,7 @@ def page(name='index', lang='fr'):
 def talks(lang, category):
     return render_template(
         f'{lang}/talks.jinja2.html', lang=lang, page_name='talks',
-        category=category, title=TALK_CATEGORIES[category][lang],
+        category=category, title=TALK_CATEGORIES[category]['name'][lang],
         schedule=SCHEDULE, categories=TALK_CATEGORIES)
 
 

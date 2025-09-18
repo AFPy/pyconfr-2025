@@ -29,13 +29,11 @@
         </ul>
         #}
 
-        {#
         <ul class="buttons">
           <li>
             <a href="{{ url_for('talks', lang=lang, category='sprint') }}">Voir la liste des sprints</a>
           </li>
         </ul>
-        #}
       </section>
 
       <section>
@@ -59,13 +57,11 @@
         </ul>
         #}
 
-        {#
         <ul class="buttons">
           <li>
             <a href="#calendar">Voir le programme</a>
           </li>
         </ul>
-        #}
       </section>
     </section>
 
@@ -95,8 +91,7 @@
       #}
     </section>
 
-    {#
-    <section class="calendar">
+    <section id="calendar">
       <h3>Calendrier</h3>
       <p>
         Le calendrier est disponible ci-dessous,
@@ -119,7 +114,6 @@
 
       <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
     </section>
-    #}
 
     <section id="register">
       <h3>Inscriptions</h3>
@@ -161,18 +155,6 @@
         remboursement ne sera possible après l’évènement.</strong>
       </p>
 
-      {#
-      <p>
-        Les inscriptions au <a href="{{ url_for('talks', lang=lang, category='lunch', _anchor='talk-MRHUVD') }}">déjeuner PyLadies</a> sont ouvertes jusqu’au <strong>27 octobre</strong>.
-      </p>
-
-      <ul class="buttons">
-        <li>
-          <a href="https://www.helloasso.com/associations/afpy/evenements/dejeuner-pyladies-a-la-pyconfr-2025">Inscriptions déjeuner PyLadies</a>
-        </li>
-      </ul>
-      #}
-
       <p>
         Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
         qui organise chaque année cet événement,
@@ -181,6 +163,47 @@
         qui aura lieu le dimanche matin, vous
         devez <a href="https://www.afpy.org/adherer">devenir membre</a>.
       </p>
+    </section>
+
+    <section id="pyladies-lunch">
+      <h3>Déjeuner PyLadies</h3>
+
+      <p>
+        Un <a href="{{ url_for('talks', lang=lang, category='lunch', _anchor='talk-SLPLFX') }}">déjeuner Pyladies</a> est organisé le <strong>samedi midi</strong>.
+      </p>
+      <p>
+        Ce déjeuner est réservé aux femmes (<a href="https://fr.wikipedia.org/wiki/Cisgenre">cis</a> et <a href="https://fr.wikipedia.org/wiki/Transgenre">trans</a>),
+        aux hommes <a href="https://fr.wikipedia.org/wiki/Transgenre">trans</a>,
+        aux personnes <a href="https://fr.wikipedia.org/wiki/Non-binaire">non-binaires</a>
+        et aux <a href="https://fr.wikipedia.org/wiki/Non-binarit%C3%A9#Identit%C3%A9s_de_genre">agenré⋅es</a> qui font du Python.
+      </p>
+      <p>
+        L’accès au déjeuner se fait sur inscription :
+      </p>
+      <ul class="buttons">
+        <li>
+          <a href="https://www.helloasso.com/associations/afpy/evenements/dejeuner-pyladies-a-la-pyconfr-2025">Inscriptions déjeuner PyLadies</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="children-workshop">
+      <h3>Atelier de programmation pour les enfants</h3>
+
+      <p>
+        Un <a href="{{ url_for('talks', lang=lang, category='workshop', _anchor='talk-RJ8GMB') }}">atelier de programmation pour les enfants</a> est organisé le <strong>samedi après-midi</strong> de 14h à 17h, en partenariat avec <a href="https://mixteen.org/">MixTeen</a>.
+      </p>
+      <p>
+        L’atelier accueille <strong>un maximum de 16 enfants</strong>, d’environ 7 ans à 17 ans.
+      </p>
+      <p>
+        L’accès à cet atelier se fait sur inscription :
+      </p>
+      <ul class="buttons">
+        <li>
+          <a href="https://www.helloasso.com/associations/afpy/evenements/atelier-de-programmation-pour-les-enfants-1">Inscriptions atelier enfants</a>
+        </li>
+      </ul>      
     </section>
 
     <section id="children-area">

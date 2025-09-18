@@ -6,12 +6,10 @@
     {% for key, speaker in schedule.speakers.items() | sort(attribute='1.name') %}
       <section>
         <h3 id="speaker-{{ key }}">
-          <a href="#speaker-{{ key }}">
-            {% if speaker.avatar %}
-              <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
-            {% endif %}
-            {{ speaker.name }}
-          </a>
+          {% if speaker.avatar_url %}
+            <img class="avatar" src="{{ speaker.avatar_url }}" loading="lazy">
+          {% endif %}
+          {{ speaker.name }}
         </h3>
         {% if speaker.biography %}
           {{ speaker.biography | markdown | safe }}
