@@ -41,7 +41,7 @@
                   {% endfor %}
                   <td rowspan="{{ rowspan }}" class="submission {{ talk.submission_type.name.en | slug }}">
                     <a href="{{ url_for('talks', category=talk.submission_type.name.en | slug, lang=lang, _anchor='talk-' + talk.code) }}" target="_parent">
-                      {{ talk.title }}
+                      {{ talk.title | markdown | safe }}
                     </a>
                     <aside class="type">
                       {{ talk.submission_type.name[lang] }}<br>
