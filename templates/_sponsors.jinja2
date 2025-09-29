@@ -211,11 +211,21 @@
         Édité par <strong>PremiumSoft CyberTech Ltd</strong>, société pionnière basée à Singapour depuis plus de 20 ans, Navicat est adopté par des milliers d’entreprises dans le monde. <strong>Notre mission : transformer la complexité des bases de données en une expérience simple, performante et collaborative.</strong>
       </p>
       {% elif company == 'Alma' %}
-        <p>Alma est une retailtech et fintech fondée en 2018. Nous proposons des solutions de paiement flexibles pour les boutiques physiques et en ligne,
+      <p>Alma est une retailtech et fintech fondée en 2018. Nous proposons des solutions de paiement flexibles pour les boutiques physiques et en ligne,
         avec le paiement en 2, 3 ou 4 fois et en différé. Notre solution de paiement s’applique également aux particuliers avec l’app et la carte Alma.
         Nous priorisons l’expérience et la satisfaction de nos clients avec des outils simples et agréables à utiliser.
         Présents dans une dizaine de pays européens, nous travaillons avec plus de 7500 grandes marques comme Sncf,
         Maisons du Monde, Nature & Découvertes, Etam, Printemps, Afflelou, Emma, Perfectstay…</p>
+      {% elif company == 'majerti' %}
+      <p>
+        Majerti est spécialisé dans le développement logiciel à l'aide du langage Python ainsi que dans l'administration de système Linux.
+        Nous vous accompagnons :
+      </p>
+      <ul>
+        <li>Pour apporter une expertise dans l'administration de vos infrastructures (Résilience, Virtualisation, Sécurisation)</li>
+        <li>Pour accompagner vos équipes de développement (Formation, Accompagnement technique)</li>
+        <li>Pour vous conseiller dans les choix stratégiques de votre système d'information (Architecture réseau, Architecture logicielle)</li>
+      </ul>
       {% endif %}
     {% elif lang == 'en' %}
       {% if company == 'Campus René Cassin' %}
@@ -407,6 +417,15 @@ With an intuitive interface and powerful features, you can easily manage MySQL, 
         </p>
       {% elif company == 'Alma' %}
         <p>Alma is a fintech founded in 2018. We offer flexible payment solutions for physical and online stores, with deferred payment and 2, 3, or 4 installments. We also help consumers stay in control of their budget with the Alma app and card. We prioritize the experience and satisfaction of our customers with simple and pleasant to use tools. We operate in ten European countries and work with more than 7500 major brands such as Maisons du Monde, Nature et Découvertes, Etam, Le Slip Français, Jacquemus, Maje…</p>
+      {% elif company == 'majerti' %}
+        <p>
+          Majerti specialises in software development using the Python language and Linux system administration. We support you by:
+        </p>
+        <ul>
+          <li>Providing expertise in the administration of your infrastructure (resilience, virtualisation, security)</li>
+          <li>Supporting your development teams (training, technical support)</li>
+          <li>To advise you on strategic choices for your information system (network architecture, software architecture)</li>
+        </ul>
       {% endif %}
     {% endif %}
   </div>
@@ -439,6 +458,7 @@ With an intuitive interface and powerful features, you can easily manage MySQL, 
       'Bronze': {
           'Yaal Coop': 'https://yaal.coop/',
           'itarverne': 'https://itarverne.fr/',
+          'majerti': 'https://majerti.fr/',
       },
 
       'Cœur' if lang == 'fr' else 'Heart': {
@@ -456,7 +476,7 @@ With an intuitive interface and powerful features, you can easily manage MySQL, 
       },
   } %}
 
-  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itarverne', 'Galactée', 'LeBureau', 'April', 'Navicat') %}
+  {% set png_logos = ('Campus René Cassin', 'IPI', 'EPSI', 'Octopuce', 'Elastic', 'Kraken', 'Kobalt', 'itarverne', 'Galactée', 'LeBureau', 'April', 'Navicat', 'majerti') %}
 
   {% if lang == 'fr' %}
     <p>
