@@ -27,7 +27,7 @@ CONFERENCE_DAYS = (
 )
 DAY_START_TIME = time(hour=8, minute=30)
 DAY_STOP_TIME = time(hour=18, minute=0)
-SLOT_MINUTES = 30
+SLOT_MINUTES = 10
 
 EXTRA = {
     "2025-11-01": {

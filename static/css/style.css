@@ -589,7 +589,7 @@ aside.subtitle {
     }
 
     tr:not(:last-child) {
-      height: 8rem;
+      height: 2.6rem;
     }
 
     td {
@@ -623,7 +623,12 @@ aside.subtitle {
     }
 
     tr > *:first-child {
+      opacity: 0;
       width: 4.5em;
+    }
+
+    tr:nth-child(3n+1) > *:first-child {
+      opacity: 1;
     }
   }
 
@@ -687,17 +692,22 @@ aside.subtitle {
     }
   }
 
-  #saturday-breakfast div,
+  #saturday-breakfast div {
+    background-image: url(../images/breakfast.webp);
+    height: calc(8rem / 3 * 2 + 0.5rem);
+    width: calc(400% + 0.9 * 3 * 0.5rem);
+  }
+
   #sunday-breakfast div {
     background-image: url(../images/breakfast.webp);
-    height: 8rem;
+    height: calc(8rem / 3 * 3 + 2 * 0.5rem);
     width: calc(400% + 0.9 * 3 * 0.5rem);
   }
 
   #saturday-lunch div,
   #sunday-lunch div {
     background-image: url(../images/lunch.webp);
-    height: calc(2 * 8rem + 0.9 * 0.5rem);
+    height: calc(8rem / 3 * 6 + 5 * 0.5rem);
     width: calc(400% + 0.9 * 3 * 0.5rem);
   }
 
@@ -878,7 +888,7 @@ aside.subtitle {
 
     table {
       border-spacing: 0;
-      font-size: 8pt;
+      font-size: 8.65pt;
 
       thead {
         height: auto;
@@ -904,12 +914,12 @@ aside.subtitle {
       }
 
       tr:not(:last-child) {
-        height: 6em;
+        height: auto;
       }
 
       td {
         line-height: 1.15;
-        padding: 0.5em 0.5em 2.5em 0.5em;
+        padding: 0 0.5em 2.2em 0.5em;
 
         &:not(:empty) {
           outline: 0.1mm solid var(--light-blue);
@@ -917,12 +927,16 @@ aside.subtitle {
       }
 
       div {
-        height: 4em !important;
+        height: 3.5em !important;
         justify-content: flex-start;
         width: 400%;
 
-        #saturday-lunch &, #sunday-lunch & {
-          height: 8em !important;
+        #saturday-lunch & {
+          height: 7em !important;
+        }
+
+        #saturday-breakfast &, #sunday-lunch & {
+          height: 2.5em !important;
         }
       }
     }
