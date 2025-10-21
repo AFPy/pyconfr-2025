@@ -40,13 +40,15 @@
                   {% if speaker.avatar_url %}
                     <img class="avatar" src="{{ speaker.avatar_url }}" loading="lazy">
                   {% endif %}
-                  {{ speaker.name }}{{ "," if not loop.last }}
+                    <a href="{{ url_for('page', name='speakers', lang=lang, _anchor="speaker-" + speaker.code) }}">{{ speaker.name }}{{ "," if not loop.last }}</a>
                 {% endfor %}
               </p>
               <p>
                 <em>
                   {% if category == 'sprint' %}
-                    Thursday and Friday fro 10:00 AM to 5:00 PM
+                      {% set slot = talk.slots[0] %}
+                      Room {{ slot.room.name[lang] }} −
+                      Thursday and Friday fro 10:00 AM to 5:00 PM
                   {% else %}
                     Room {{ talk.slots[0].room.name[lang] }}
                     − {{ day | format_day(lang) }} at {{ minutes | format_minutes(lang) }}
